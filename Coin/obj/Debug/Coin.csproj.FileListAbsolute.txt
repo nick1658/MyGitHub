@@ -1,0 +1,10 @@
+D:\VSProjects\Coin\obj\Debug\Coin.csprojResolveAssemblyReference.cache
+D:\VSProjects\Coin\obj\Debug\Coin.Properties.Resources.resources
+D:\VSProjects\Coin\obj\Debug\Coin.csproj.GenerateResource.Cache
+D:\VSProjects\Coin\obj\Debug\Coin.Form1.resources
+D:\VSProjects\Coin\bin\Debug\CoinUpdate.exe.config
+D:\VSProjects\Coin\bin\Debug\CoinUpdate.exe
+D:\VSProjects\Coin\bin\Debug\CoinUpdate.pdb
+D:\VSProjects\Coin\obj\Debug\CoinUpdate.exe
+D:\VSProjects\Coin\obj\Debug\CoinUpdate.pdb
+D:\VSProjects\Coin\obj\Debug\Coin.CoinOP.resources
