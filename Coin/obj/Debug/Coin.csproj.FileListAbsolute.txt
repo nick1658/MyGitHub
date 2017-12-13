@@ -8,3 +8,14 @@ D:\VSProjects\Coin\bin\Debug\CoinUpdate.pdb
 D:\VSProjects\Coin\obj\Debug\CoinUpdate.exe
 D:\VSProjects\Coin\obj\Debug\CoinUpdate.pdb
 D:\VSProjects\Coin\obj\Debug\Coin.CoinOP.resources
+D:\VSProjects\MyGitHub\Coin\bin\Debug\CoinUpdate.exe.config
+D:\VSProjects\MyGitHub\Coin\obj\Debug\CoinUpdate.exe
+D:\VSProjects\MyGitHub\Coin\obj\Debug\CoinUpdate.pdb
+D:\VSProjects\MyGitHub\Coin\bin\Debug\CoinUpdate.exe
+D:\VSProjects\MyGitHub\Coin\bin\Debug\CoinUpdate.pdb
+D:\VSProjects\MyGitHub\Coin\obj\Debug\Coin.csprojResolveAssemblyReference.cache
+D:\VSProjects\MyGitHub\Coin\obj\Debug\Coin.Form1.resources
+D:\VSProjects\MyGitHub\Coin\obj\Debug\Coin.CoinOP.resources
+D:\VSProjects\MyGitHub\Coin\obj\Debug\Coin.Properties.Resources.resources
+D:\VSProjects\MyGitHub\Coin\obj\Debug\Coin.csproj.GenerateResource.Cache
+D:\VSProjects\MyGitHub\Coin\obj\Debug\Coin.Form3.resources

@@ -1,0 +1,11 @@
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\obj\Debug\绘图程序.exe
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\obj\Debug\绘图程序.pdb
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\bin\Debug\绘图程序.exe.config
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\bin\Debug\绘图程序.exe
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\bin\Debug\绘图程序.pdb
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\bin\Debug\ColorHatch.pdb
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\bin\Debug\ColorHatch.xml
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\obj\Debug\绘图程序.csprojResolveAssemblyReference.cache
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\obj\Debug\绘图程序.Draw.resources
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\obj\Debug\绘图程序.Properties.Resources.resources
+D:\VSProjects\MyGitHub\绘图程序\绘图程序\obj\Debug\绘图程序.csproj.GenerateResource.Cache
