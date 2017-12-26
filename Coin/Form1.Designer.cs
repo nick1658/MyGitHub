@@ -72,10 +72,10 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
             this.richTextBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.richTextBox1.Location = new System.Drawing.Point(163, 6);
+            this.richTextBox1.Location = new System.Drawing.Point(163, -2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(776, 525);
+            this.richTextBox1.Size = new System.Drawing.Size(776, 539);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             this.richTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox1_KeyPress);
@@ -153,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(942, 533);
+            this.ClientSize = new System.Drawing.Size(942, 539);
             this.Controls.Add(this.更多操作);
             this.Controls.Add(this.重启);
             this.Controls.Add(this.label1);

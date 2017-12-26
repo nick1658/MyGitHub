@@ -32,12 +32,12 @@ namespace Coin
             if (启动.Text == "启动")
             {
                 parentFrm.send_cmd("0002");//启动
-                启动.Text = "停止";
+                //启动.Text = "停止";
             }
             else
             {
                 parentFrm.send_cmd("0003");//停止
-                启动.Text = "启动";
+                //启动.Text = "启动";
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -155,7 +155,10 @@ namespace Coin
                     full_rej_pos.Text = str;
                     break;
                 case 50:
-                    启动.Text = "启动";//停机信号
+                    if (str == "stop")
+                        启动.Text = "启动";//停机信号
+                    else
+                        启动.Text = "停止";//停机信号
                     break;
                 default:
                     break;
@@ -178,7 +181,7 @@ namespace Coin
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show(e.ToString(), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show(e.ToString(), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
                 }

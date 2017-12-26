@@ -188,11 +188,20 @@ namespace Coin
          {
             this.BeginInvoke(new MethodInvoker(delegate
             {
+                string str_temp;
+
+                str_temp = richTextBox1.Text;
+                while (str_temp.Length + content.Length > 2000)
+                {
+                    int len = str_temp.IndexOf('\n');
+                    str_temp = str_temp.Remove(0, len + 1);
+                }
+                richTextBox1.Clear();
+                richTextBox1.AppendText(str_temp+content);
+                
                 richTextBox1.Focus();
                 richTextBox1.Select(richTextBox1.TextLength, 0);
                 richTextBox1.ScrollToCaret();
-                richTextBox1.AppendText(content);
-                
              }));
          }
         /// 发送数据
