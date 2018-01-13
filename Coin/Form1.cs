@@ -11,6 +11,8 @@ using System.IO.Ports;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
+using System.Net;
+using Comzept.Genesis.NetworkTools;
 
 
 namespace Coin
@@ -58,7 +60,8 @@ namespace Coin
                 comboBox1.SelectedItem = comboBox1.Items[0];
             }
             coinOp.parentFrm = this;
-
+            txtIP.Text = "192.168.1.250";
+            radioNet.Checked = true;
 
         }
 
@@ -230,11 +233,23 @@ namespace Coin
         {
             if (下载.Text == "下载")
             {
+
                 Thread thread_send = null;
-                下载.Enabled = false;
                 //下载.Text = "停止";
-                thread_send = new Thread(this.DoSend);
-                thread_send.Start();
+                if (radioNet.Checked == true)
+                {
+                    thread_send = new Thread(this.DoNetSend);
+                    thread_send.Start();
+                }
+                else if (radioSerial.Checked == true)
+                {
+                    thread_send = new Thread(this.DoSerialSend);
+                    thread_send.Start();
+                }
+                else
+                {
+                    MessageBox.Show("请选择下载方式");
+                }
             }
             else
             {
@@ -242,6 +257,7 @@ namespace Coin
                 下载.Text = "下载";
             }
         }
+       #region -=[ CRC Array ]=-
        byte [] auchCRCHi=
         {
             0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81,
@@ -285,7 +301,8 @@ namespace Coin
             0x48, 0x49, 0x89, 0x4B, 0x8B, 0x8A, 0x4A, 0x4E, 0x8E, 0x8F, 0x4F, 0x8D, 0x4D, 0x4C, 0x8C,
             0x44, 0x84, 0x85, 0x45, 0x87, 0x47, 0x46, 0x86, 0x82, 0x42, 0x43, 0x83, 0x41, 0x81, 0x80,
             0x40
-        }; 
+        };
+       #endregion
 
         int CRC16(byte [] _data_buf, int len)
         {
@@ -470,7 +487,46 @@ namespace Coin
             {
             }
         }
-        private void DoSend() {
+        private void DoNetSend()
+        {
+
+            if (fileName == null)
+            {
+                MessageBox.Show("请先选择要下载的文件", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            IPAddress ip;
+            try
+            {
+                ip = IPAddress.Parse(txtIP.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("IP地址设置有误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtIP.Focus();
+                return;
+            }
+
+            Cursor.Current = Cursors.WaitCursor;
+            Application.DoEvents();
+            下载.Enabled = false;
+            try
+            {
+                TFTPClient tftp = new TFTPClient(txtIP.Text);
+                tftp.Put("Coin.bin", fileName);
+                //MessageBox.Show("PUT finished");
+            }
+            catch (TFTPClient.TFTPException tx)
+            {
+                MessageBox.Show("Exception in PUT: " + tx.ErrorMessage);
+                Cursor.Current = Cursors.Default;
+            }
+            下载.Enabled = true;
+            Cursor.Current = Cursors.Default;
+            Application.DoEvents();
+        }
+        private void DoSerialSend()
+        {
             if (fileName != null)
             {
                 FileStream readStream = new FileStream(fileName, FileMode.Open);
@@ -479,6 +535,7 @@ namespace Coin
                 int length;
                 int crc;
 
+                下载.Enabled = false;
                 send_str("version\r");
                 Thread.Sleep(100);
                 send_str("write reset\r");
@@ -540,7 +597,7 @@ namespace Coin
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 fileName = openFileDialog.FileName;
-                Tem.Text = fileName;
+                filePath.Text = fileName;
             }
         }
 
@@ -557,8 +614,40 @@ namespace Coin
 
         private void button2_Click(object sender, EventArgs e)
         {
-            send_str("reset\r");
+            if (radioSerial.Checked == true)
+            {
+                send_str("reset\r");
+            }
+            else if(radioNet.Checked == true)
+            {
+                IPAddress ip;
+                try
+                {
+                    ip = IPAddress.Parse(txtIP.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("IP地址设置有误！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtIP.Focus();
+                    return;
+                }
 
+                Cursor.Current = Cursors.WaitCursor;
+                Application.DoEvents();
+                try
+                {
+                    TFTPClient tftp = new TFTPClient(txtIP.Text);
+                    tftp.sendNetCmd("reset");
+                    //MessageBox.Show("PUT finished");
+                }
+                catch (TFTPClient.TFTPException tx)
+                {
+                    MessageBox.Show("Exception in PUT: " + tx.ErrorMessage);
+                    Cursor.Current = Cursors.Default;
+                }
+                Cursor.Current = Cursors.Default;
+                Application.DoEvents();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
