@@ -150,7 +150,7 @@
             this.radioSerial.Size = new System.Drawing.Size(71, 16);
             this.radioSerial.TabIndex = 17;
             this.radioSerial.TabStop = true;
-            this.radioSerial.Text = "串口连接";
+            this.radioSerial.Text = "串口下载";
             this.radioSerial.UseVisualStyleBackColor = true;
             // 
             // radioNet
@@ -161,7 +161,7 @@
             this.radioNet.Size = new System.Drawing.Size(71, 16);
             this.radioNet.TabIndex = 18;
             this.radioNet.TabStop = true;
-            this.radioNet.Text = "网络串口";
+            this.radioNet.Text = "网络下载";
             this.radioNet.UseVisualStyleBackColor = true;
             // 
             // txtIP

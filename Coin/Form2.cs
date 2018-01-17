@@ -14,6 +14,8 @@ namespace Coin
     {
 
         public Form1 parentFrm;
+
+        System.Timers.Timer _t;
         public CoinOP()
         {
             InitializeComponent();
@@ -59,13 +61,15 @@ namespace Coin
             yz_1yuan.Text = "0";
             yz_5jiao.Text = "0";
             yz_1jiao.Text = "0";
+            yz_dao1jiao.Text = "0";
             yz_5fen.Text = "0";
             yz_2fen.Text = "0";
             yz_1fen.Text = "0";
-            jnb_10yuan.Text = "0";
-            jnb_5yuan.Text = "0";
+            yz_jnb_10yuan.Text = "0";
+            yz_jnb_5yuan.Text = "0";
             dq_1yuan.Text = "0";
             dq_1jiao.Text = "0";
+            dq_dao1jiao.Text = "0";
             dq_5jiao.Text = "0";
             dq_5fen.Text = "0";
             dq_2fen.Text = "0";
@@ -76,10 +80,26 @@ namespace Coin
             idle_time.Text = "0";
             full_rej_pos.Text = "0";
             full_stop_num.Text = "0";
+            system_boot_delay.Text = "0";
+            dq_speed.Text = "9999";
+
+            cb_coinType.Items.Add("1元");
+            cb_coinType.Items.Add("5角铜");
+            cb_coinType.Items.Add("5角钢");
+            cb_coinType.Items.Add("大1角铝");
+            cb_coinType.Items.Add("1角钢");
+            cb_coinType.Items.Add("1角铝");
+            cb_coinType.Items.Add("5分");
+            cb_coinType.Items.Add("2分");
+            cb_coinType.Items.Add("1分");
+            cb_coinType.Items.Add("纪念币10元");
+            cb_coinType.Items.Add("纪念币5元");
+            //parentFrm.send_cmd("0001");//同步数据
         }
         
         private void setValue (int index, string str)
         {
+            #region -=[ switch ]=-
             switch (index)
             {
                 case 1:
@@ -113,10 +133,10 @@ namespace Coin
                     yz_1fen.Text = str;
                     break;
                 case 11:
-                    jnb_10yuan.Text = str;
+                    yz_jnb_10yuan.Text = str;
                     break;
                 case 12:
-                    jnb_5yuan.Text = str;
+                    yz_jnb_5yuan.Text = str;
                     break;
                 case 13:
                     dq_1yuan.Text = str;
@@ -154,15 +174,49 @@ namespace Coin
                 case 24:
                     full_rej_pos.Text = str;
                     break;
+                case 25:
+                    system_boot_delay.Text = str;
+                    break;
+                case 30:
+                    dq_dao1jiao.Text = str;
+                    break;
                 case 50:
-                    if (str == "stop")
+                    if (str == "0")
                         启动.Text = "启动";//停机信号
                     else
                         启动.Text = "停止";//停机信号
                     break;
+                case 51:
+                    if (Int32.Parse(str) < 11)
+                    {
+                        cb_coinType.SelectedIndex = Int32.Parse(str);
+                    }
+                    break;
+                case 52:
+                    tz_H_Max.Text = str;
+                    break;
+                case 53:
+                    tz_H_Min.Text = str;
+                    break;
+                case 54:
+                    tz_M_Max.Text = str;
+                    break;
+                case 55:
+                    tz_M_Min.Text = str;
+                    break;
+                case 56:
+                    tz_L_Max.Text = str;
+                    break;
+                case 57:
+                    tz_L_Min.Text = str;
+                    break;
+                case 58:
+                    dq_speed.Text = str;
+                    break;
                 default:
                     break;
             }
+            #endregion
         }
         public void CoinOP_SetText(string str)
         {
@@ -181,13 +235,19 @@ namespace Coin
                     }
                     catch (Exception e)
                     {
+                        index = 0;
+                        newstring = "";
                         //MessageBox.Show(e.ToString(), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                       // continue;
                     }
                 }
                 else if (c == ';')
                 {
                     setValue(index, newstring);
+                    newstring = "";
+                }
+                else if (c == ':')
+                {
                     newstring = "";
                 }
                 else if (c == '\r')
@@ -207,6 +267,8 @@ namespace Coin
         }
         private void button5_Click(object sender, EventArgs e)
         {
+            stop_poll();
+            poll_data_ckeck.Checked = false;
             parentFrm.set_send_state(0);
             this.Hide();
             parentFrm.Show();
@@ -299,6 +361,17 @@ namespace Coin
                 }
             }
         }
+        private void yz_dao1jiao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("30", yz_dao1jiao.Text);
+                }
+            }
+        }
 
         private void yz_5fen_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -343,7 +416,7 @@ namespace Coin
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("11", jnb_10yuan.Text);
+                    parentFrm.send_value("11", yz_jnb_10yuan.Text);
                 }
             }
         }
@@ -355,7 +428,7 @@ namespace Coin
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("12", jnb_5yuan.Text);
+                    parentFrm.send_value("12", yz_jnb_5yuan.Text);
                 }
             }
         }
@@ -394,5 +467,127 @@ namespace Coin
                 }
             }
         }
+        private void system_boot_delay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("25", system_boot_delay.Text);
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            parentFrm.send_value("51", "" + cb_coinType.SelectedIndex);
+        }
+
+        private void tz_H_Max_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("52", tz_H_Max.Text);
+                }
+            }
+        }
+
+        private void tz_H_Min_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("53", tz_H_Min.Text);
+                }
+            }
+        }
+
+        private void tz_M_Max_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("54", tz_M_Max.Text);
+                }
+            }
+        }
+
+        private void tz_M_Min_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("55", tz_M_Min.Text);
+                }
+            }
+        }
+
+        private void tz_L_Max_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("56", tz_L_Max.Text);
+                }
+            }
+        }
+
+        private void tz_L_Min_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("57", tz_L_Min.Text);
+                }
+            }
+        }
+
+        private void poll_data(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd("0006");//同步数据
+        }
+        private void poll_data_ckeck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (poll_data_ckeck.Checked == true)
+            {
+                start_poll();
+            }
+            else
+            {
+                stop_poll();
+            }
+        }
+
+        private void start_poll ()
+        {
+            _t = new System.Timers.Timer(1000);
+            _t.Elapsed += poll_data;//到达时间的时候执行事件；
+            _t.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+            _t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
+        }
+        private void stop_poll()
+        {
+            if (_t == null) return;
+            _t.Elapsed -= poll_data;
+            _t.Stop();
+            _t.Dispose();
+            _t = null;
+        }
+
+
     }
 }

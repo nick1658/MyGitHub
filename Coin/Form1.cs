@@ -652,9 +652,10 @@ namespace Coin
 
         private void button3_Click(object sender, EventArgs e)
         {
+            set_send_state(2);
+            send_str("\r");
             this.Hide();
             coinOp.Show();
-            set_send_state(2);
             send_cmd("0001");//同步数据
 
         }
