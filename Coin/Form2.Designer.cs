@@ -113,6 +113,20 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.poll_data_ckeck = new System.Windows.Forms.CheckBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.cpuUsage = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.coin_mode_button = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -230,23 +244,23 @@
             // 
             this.yz_jnb_5yuan.Location = new System.Drawing.Point(142, 205);
             this.yz_jnb_5yuan.Name = "yz_jnb_5yuan";
-            this.yz_jnb_5yuan.Size = new System.Drawing.Size(111, 31);
+            this.yz_jnb_5yuan.Size = new System.Drawing.Size(86, 31);
             this.yz_jnb_5yuan.TabIndex = 33;
             this.yz_jnb_5yuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.jnb_5yuan_KeyPress);
             // 
             // yz_1fen
             // 
-            this.yz_1fen.Location = new System.Drawing.Point(243, 99);
+            this.yz_1fen.Location = new System.Drawing.Point(255, 99);
             this.yz_1fen.Name = "yz_1fen";
-            this.yz_1fen.Size = new System.Drawing.Size(111, 31);
+            this.yz_1fen.Size = new System.Drawing.Size(86, 31);
             this.yz_1fen.TabIndex = 32;
             this.yz_1fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_1fen_KeyPress);
             // 
             // yz_2fen
             // 
-            this.yz_2fen.Location = new System.Drawing.Point(243, 65);
+            this.yz_2fen.Location = new System.Drawing.Point(255, 65);
             this.yz_2fen.Name = "yz_2fen";
-            this.yz_2fen.Size = new System.Drawing.Size(111, 31);
+            this.yz_2fen.Size = new System.Drawing.Size(86, 31);
             this.yz_2fen.TabIndex = 29;
             this.yz_2fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_2fen_KeyPress);
             // 
@@ -254,15 +268,15 @@
             // 
             this.yz_jnb_10yuan.Location = new System.Drawing.Point(142, 169);
             this.yz_jnb_10yuan.Name = "yz_jnb_10yuan";
-            this.yz_jnb_10yuan.Size = new System.Drawing.Size(111, 31);
+            this.yz_jnb_10yuan.Size = new System.Drawing.Size(86, 31);
             this.yz_jnb_10yuan.TabIndex = 27;
             this.yz_jnb_10yuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.jnb_10yuan_KeyPress);
             // 
             // yz_5fen
             // 
-            this.yz_5fen.Location = new System.Drawing.Point(243, 31);
+            this.yz_5fen.Location = new System.Drawing.Point(255, 31);
             this.yz_5fen.Name = "yz_5fen";
-            this.yz_5fen.Size = new System.Drawing.Size(111, 31);
+            this.yz_5fen.Size = new System.Drawing.Size(86, 31);
             this.yz_5fen.TabIndex = 28;
             this.yz_5fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_5fen_KeyPress);
             // 
@@ -270,7 +284,7 @@
             // 
             this.yz_1jiao.Location = new System.Drawing.Point(70, 99);
             this.yz_1jiao.Name = "yz_1jiao";
-            this.yz_1jiao.Size = new System.Drawing.Size(111, 31);
+            this.yz_1jiao.Size = new System.Drawing.Size(86, 31);
             this.yz_1jiao.TabIndex = 26;
             this.yz_1jiao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_1jiao_KeyPress);
             // 
@@ -278,7 +292,7 @@
             // 
             this.yz_5jiao.Location = new System.Drawing.Point(70, 65);
             this.yz_5jiao.Name = "yz_5jiao";
-            this.yz_5jiao.Size = new System.Drawing.Size(111, 31);
+            this.yz_5jiao.Size = new System.Drawing.Size(86, 31);
             this.yz_5jiao.TabIndex = 23;
             this.yz_5jiao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_5jiao_KeyPress);
             // 
@@ -286,7 +300,7 @@
             // 
             this.yz_1yuan.Location = new System.Drawing.Point(70, 31);
             this.yz_1yuan.Name = "yz_1yuan";
-            this.yz_1yuan.Size = new System.Drawing.Size(111, 31);
+            this.yz_1yuan.Size = new System.Drawing.Size(86, 31);
             this.yz_1yuan.TabIndex = 22;
             this.yz_1yuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_1yuan_KeyPress);
             // 
@@ -530,6 +544,15 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.checkBox9);
+            this.groupBox5.Controls.Add(this.checkBox8);
+            this.groupBox5.Controls.Add(this.checkBox7);
+            this.groupBox5.Controls.Add(this.checkBox6);
+            this.groupBox5.Controls.Add(this.checkBox5);
+            this.groupBox5.Controls.Add(this.checkBox4);
+            this.groupBox5.Controls.Add(this.checkBox3);
+            this.groupBox5.Controls.Add(this.checkBox2);
+            this.groupBox5.Controls.Add(this.checkBox1);
             this.groupBox5.Controls.Add(this.yz_dao1jiao);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.yz_jnb_5yuan);
@@ -554,13 +577,13 @@
             this.groupBox5.Size = new System.Drawing.Size(367, 241);
             this.groupBox5.TabIndex = 34;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "预置计数";
+            this.groupBox5.Text = "预置计数设置";
             // 
             // yz_dao1jiao
             // 
             this.yz_dao1jiao.Location = new System.Drawing.Point(70, 134);
             this.yz_dao1jiao.Name = "yz_dao1jiao";
-            this.yz_dao1jiao.Size = new System.Drawing.Size(111, 31);
+            this.yz_dao1jiao.Size = new System.Drawing.Size(86, 31);
             this.yz_dao1jiao.TabIndex = 35;
             this.yz_dao1jiao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_dao1jiao_KeyPress);
             // 
@@ -585,7 +608,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(189, 102);
+            this.label22.Location = new System.Drawing.Point(201, 102);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(42, 21);
             this.label22.TabIndex = 30;
@@ -594,7 +617,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(189, 68);
+            this.label23.Location = new System.Drawing.Point(201, 68);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(42, 21);
             this.label23.TabIndex = 27;
@@ -603,7 +626,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(189, 34);
+            this.label24.Location = new System.Drawing.Point(201, 34);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(42, 21);
             this.label24.TabIndex = 26;
@@ -817,9 +840,9 @@
             this.groupBox7.Controls.Add(this.label34);
             this.groupBox7.Controls.Add(this.label35);
             this.groupBox7.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox7.Location = new System.Drawing.Point(595, 12);
+            this.groupBox7.Location = new System.Drawing.Point(595, 67);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(320, 215);
+            this.groupBox7.Size = new System.Drawing.Size(320, 160);
             this.groupBox7.TabIndex = 36;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "特征值";
@@ -844,7 +867,7 @@
             // 
             // tz_L_Max
             // 
-            this.tz_L_Max.Location = new System.Drawing.Point(233, 102);
+            this.tz_L_Max.Location = new System.Drawing.Point(233, 85);
             this.tz_L_Max.Name = "tz_L_Max";
             this.tz_L_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_L_Max.TabIndex = 32;
@@ -853,7 +876,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(87, 79);
+            this.label29.Location = new System.Drawing.Point(87, 62);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(21, 21);
             this.label29.TabIndex = 30;
@@ -861,7 +884,7 @@
             // 
             // tz_M_Min
             // 
-            this.tz_M_Min.Location = new System.Drawing.Point(151, 139);
+            this.tz_M_Min.Location = new System.Drawing.Point(151, 122);
             this.tz_M_Min.Name = "tz_M_Min";
             this.tz_M_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_M_Min.TabIndex = 29;
@@ -869,7 +892,7 @@
             // 
             // tz_L_Min
             // 
-            this.tz_L_Min.Location = new System.Drawing.Point(233, 139);
+            this.tz_L_Min.Location = new System.Drawing.Point(233, 122);
             this.tz_L_Min.Name = "tz_L_Min";
             this.tz_L_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_L_Min.TabIndex = 28;
@@ -878,7 +901,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(251, 79);
+            this.label30.Location = new System.Drawing.Point(251, 62);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(21, 21);
             this.label30.TabIndex = 27;
@@ -886,7 +909,7 @@
             // 
             // tz_M_Max
             // 
-            this.tz_M_Max.Location = new System.Drawing.Point(151, 102);
+            this.tz_M_Max.Location = new System.Drawing.Point(151, 85);
             this.tz_M_Max.Name = "tz_M_Max";
             this.tz_M_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_M_Max.TabIndex = 26;
@@ -895,7 +918,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(170, 78);
+            this.label31.Location = new System.Drawing.Point(170, 61);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(21, 21);
             this.label31.TabIndex = 26;
@@ -903,7 +926,7 @@
             // 
             // tz_H_Min
             // 
-            this.tz_H_Min.Location = new System.Drawing.Point(69, 139);
+            this.tz_H_Min.Location = new System.Drawing.Point(69, 122);
             this.tz_H_Min.Name = "tz_H_Min";
             this.tz_H_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_H_Min.TabIndex = 23;
@@ -911,7 +934,7 @@
             // 
             // tz_H_Max
             // 
-            this.tz_H_Max.Location = new System.Drawing.Point(69, 103);
+            this.tz_H_Max.Location = new System.Drawing.Point(69, 86);
             this.tz_H_Max.Name = "tz_H_Max";
             this.tz_H_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_H_Max.TabIndex = 22;
@@ -920,7 +943,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(21, 143);
+            this.label34.Location = new System.Drawing.Point(21, 126);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(43, 21);
             this.label34.TabIndex = 21;
@@ -929,7 +952,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(21, 110);
+            this.label35.Location = new System.Drawing.Point(21, 93);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(43, 21);
             this.label35.TabIndex = 20;
@@ -938,7 +961,7 @@
             // poll_data_ckeck
             // 
             this.poll_data_ckeck.AutoSize = true;
-            this.poll_data_ckeck.Location = new System.Drawing.Point(130, 505);
+            this.poll_data_ckeck.Location = new System.Drawing.Point(130, 511);
             this.poll_data_ckeck.Name = "poll_data_ckeck";
             this.poll_data_ckeck.Size = new System.Drawing.Size(78, 16);
             this.poll_data_ckeck.TabIndex = 38;
@@ -946,12 +969,152 @@
             this.poll_data_ckeck.UseVisualStyleBackColor = true;
             this.poll_data_ckeck.CheckedChanged += new System.EventHandler(this.poll_data_ckeck_CheckedChanged);
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(53, 512);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(11, 12);
+            this.label36.TabIndex = 39;
+            this.label36.Text = "%";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(13, 512);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(29, 12);
+            this.label37.TabIndex = 40;
+            this.label37.Text = "CPU:";
+            // 
+            // cpuUsage
+            // 
+            this.cpuUsage.AutoSize = true;
+            this.cpuUsage.Location = new System.Drawing.Point(38, 512);
+            this.cpuUsage.Name = "cpuUsage";
+            this.cpuUsage.Size = new System.Drawing.Size(17, 12);
+            this.cpuUsage.TabIndex = 41;
+            this.cpuUsage.Text = "99";
+            this.cpuUsage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(161, 39);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 36;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(346, 39);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 37;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(346, 73);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 38;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(346, 107);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4.TabIndex = 39;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(161, 73);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(15, 14);
+            this.checkBox5.TabIndex = 40;
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(161, 107);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(15, 14);
+            this.checkBox6.TabIndex = 41;
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(161, 142);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(15, 14);
+            this.checkBox7.TabIndex = 42;
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(234, 177);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(15, 14);
+            this.checkBox8.TabIndex = 43;
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(234, 213);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(15, 14);
+            this.checkBox9.TabIndex = 44;
+            this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // coin_mode_button
+            // 
+            this.coin_mode_button.BackColor = System.Drawing.SystemColors.Control;
+            this.coin_mode_button.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.coin_mode_button.FlatAppearance.BorderSize = 0;
+            this.coin_mode_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.coin_mode_button.ForeColor = System.Drawing.Color.Transparent;
+            this.coin_mode_button.Image = global::Coin.Properties.Resources._0_switch_off;
+            this.coin_mode_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.coin_mode_button.Location = new System.Drawing.Point(692, 12);
+            this.coin_mode_button.Name = "coin_mode_button";
+            this.coin_mode_button.Size = new System.Drawing.Size(132, 45);
+            this.coin_mode_button.TabIndex = 45;
+            this.coin_mode_button.UseVisualStyleBackColor = false;
+            this.coin_mode_button.Click += new System.EventHandler(this.coin_mode_Click);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("宋体", 15.75F);
+            this.label38.Location = new System.Drawing.Point(598, 24);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(94, 21);
+            this.label38.TabIndex = 45;
+            this.label38.Text = "清分模式";
+            // 
             // CoinOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(942, 533);
+            this.Controls.Add(this.label38);
+            this.Controls.Add(this.coin_mode_button);
+            this.Controls.Add(this.cpuUsage);
+            this.Controls.Add(this.label37);
+            this.Controls.Add(this.label36);
             this.Controls.Add(this.poll_data_ckeck);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -1074,6 +1237,20 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox dq_speed;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label cpuUsage;
+        private System.Windows.Forms.Button coin_mode_button;
+        private System.Windows.Forms.Label label38;
 
     }
 }

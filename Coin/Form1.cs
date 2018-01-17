@@ -21,12 +21,15 @@ namespace Coin
     {
         public const int FRAME_SIZE = 512;
 
+        System.Timers.Timer send_timer;
         int send_state = 0;
         int respond_msg = 0xA0000;
+        int send_lock = 0;
         int delay_ms = 0;
         CoinOP coinOp = new CoinOP();
         string fileName = null;
         List<byte> buffer = new List<byte>(4096);
+        List<string> send_buff = new List<string>(32);
         SerialPort s = new SerialPort();    //实例化一个串口对象，在前端控件中可以直接拖过来，但最好是在后端代码中写代码，这样复制到其他地方不会出错。s是一个串口的句柄  
 
         public void set_send_state(int state)
@@ -61,8 +64,28 @@ namespace Coin
             }
             coinOp.parentFrm = this;
             txtIP.Text = "192.168.1.250";
-            radioNet.Checked = true;
+            radioSerial.Checked = true;
 
+            send_timer = new System.Timers.Timer(500);
+            send_timer.Elapsed += send_handler;//到达时间的时候执行事件；
+            send_timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+            send_timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
+        }
+
+        private void send_handler(object sender, EventArgs e)
+        {
+            if (send_lock == 1)
+            {
+                return;
+            }     
+            Interlocked.Exchange(ref send_lock, 1);
+            if (send_buff.Count > 0)
+            {
+                byte[] sendData = Encoding.ASCII.GetBytes(send_buff[0]);
+                send_buff.RemoveAt(0);
+                this.SendData(sendData);
+            }
+            Interlocked.Exchange(ref send_lock, 0);
         }
 
         private bool open_com ()
@@ -460,24 +483,34 @@ namespace Coin
         }
         public void send_value(string addr_str, string value_str)
         {
-            byte[] sendData = null;
             int addr = int.Parse(addr_str) % 10000;
             string a_str = string.Format("{0:X4}", addr);
             int value = int.Parse(value_str) % 10000;
             string v_str = string.Format("{0:X4}", value);
-            sendData = Encoding.ASCII.GetBytes(":02" + a_str + "09" + v_str + " ");
-            sendData = Encoding.ASCII.GetBytes(":02" + a_str + "09" + v_str + RecordParse(":02" + a_str + "09" + v_str + "FF"));
-            if (this.SendData(sendData))//如果发送数据成功
-            {
-            }
+            //byte[] sendData = null;
+            //sendData = Encoding.ASCII.GetBytes(":02" + a_str + "09" + v_str + " ");
+            //sendData = Encoding.ASCII.GetBytes(":02" + a_str + "09" + v_str + RecordParse(":02" + a_str + "09" + v_str + "FF"));
+            //if (this.SendData(sendData))//如果发送数据成功
+            //{
+            //}
+
+            while (send_lock == 1) ;
+            Interlocked.Exchange(ref send_lock, 1);
+            send_buff.Add(":02" + a_str + "09" + v_str + RecordParse(":02" + a_str + "09" + v_str + "FF"));
+            Interlocked.Exchange(ref send_lock, 0);
         }
-        public void send_cmd(string str)
+        public void send_cmd_code(string str)
         {
-            byte[] sendData = null;
-            sendData = Encoding.ASCII.GetBytes(":02000008" + str + RecordParse(":02000008" + str + "FF"));
-            if (this.SendData(sendData))//如果发送数据成功
-            {
-            }
+            //byte[] sendData = null;
+            //sendData = Encoding.ASCII.GetBytes(":02000008" + str + RecordParse(":02000008" + str + "FF"));
+
+            //if (this.SendData(sendData))//如果发送数据成功
+            //{
+            //}
+            while (send_lock == 1);
+            Interlocked.Exchange(ref send_lock, 1);
+            send_buff.Add(":02000008" + str + RecordParse(":02000008" + str + "FF"));
+            Interlocked.Exchange(ref send_lock, 0);
         }
         public void send_str(string str)
         {
@@ -608,6 +641,14 @@ namespace Coin
         }
         void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (send_timer != null)
+            {
+                send_timer.Elapsed -= send_handler;
+                send_timer.Stop();
+                send_timer.Dispose();
+                send_timer = null;
+            }
+            
             Thread.Sleep(100);
             Application.Exit();
         }
@@ -656,7 +697,7 @@ namespace Coin
             send_str("\r");
             this.Hide();
             coinOp.Show();
-            send_cmd("0001");//同步数据
+            send_cmd_code("0001");//同步数据
 
         }
 

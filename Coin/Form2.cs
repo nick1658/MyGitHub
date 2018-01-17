@@ -16,6 +16,8 @@ namespace Coin
         public Form1 parentFrm;
 
         System.Timers.Timer _t;
+
+        private int coin_mode = 0;
         public CoinOP()
         {
             InitializeComponent();
@@ -26,30 +28,30 @@ namespace Coin
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            parentFrm.send_cmd("0005");//启动
+            parentFrm.send_cmd_code("0005");//启动
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             if (启动.Text == "启动")
             {
-                parentFrm.send_cmd("0002");//启动
+                parentFrm.send_cmd_code("0002");//启动
                 //启动.Text = "停止";
             }
             else
             {
-                parentFrm.send_cmd("0003");//停止
+                parentFrm.send_cmd_code("0003");//停止
                 //启动.Text = "启动";
             }
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            parentFrm.send_cmd("0004");//打印
+            parentFrm.send_cmd_code("0004");//打印
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            parentFrm.send_cmd("E001");//清除报警
+            parentFrm.send_cmd_code("E001");//清除报警
         }
 
         private void CoinOP_Load(object sender, EventArgs e)
@@ -94,7 +96,7 @@ namespace Coin
             cb_coinType.Items.Add("1分");
             cb_coinType.Items.Add("纪念币10元");
             cb_coinType.Items.Add("纪念币5元");
-            //parentFrm.send_cmd("0001");//同步数据
+            //parentFrm.send_cmd_code("0001");//同步数据
         }
         
         private void setValue (int index, string str)
@@ -176,6 +178,24 @@ namespace Coin
                     break;
                 case 25:
                     system_boot_delay.Text = str;
+                    break;
+                case 26:
+                    if (str == "1")
+                    {
+                        coin_mode = 1;
+                        coin_mode_button.Image = global::Coin.Properties.Resources._1_switch_on;
+                    }
+                    else if (str == "0")
+                    {
+                        coin_mode = 0;
+                        coin_mode_button.Image = global::Coin.Properties.Resources._0_switch_off;
+                    }
+                    break;
+                case 27:
+                    yz_dao1jiao.Text = str;
+                    break;
+                case 28:
+                    cpuUsage.Text = str;
                     break;
                 case 30:
                     dq_dao1jiao.Text = str;
@@ -277,7 +297,7 @@ namespace Coin
         private void button6_Click(object sender, EventArgs e)
         {
             parentFrm.set_send_state(2);
-            parentFrm.send_cmd("0001");//同步数据
+            parentFrm.send_cmd_code("0001");//同步数据
         }
 
         private void kick1_delay_KeyPress(object sender, KeyPressEventArgs e)
@@ -368,7 +388,7 @@ namespace Coin
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("30", yz_dao1jiao.Text);
+                    parentFrm.send_value("27", yz_dao1jiao.Text);
                 }
             }
         }
@@ -558,7 +578,7 @@ namespace Coin
 
         private void poll_data(object sender, EventArgs e)
         {
-            parentFrm.send_cmd("0006");//同步数据
+            parentFrm.send_cmd_code("0006");//同步数据
         }
         private void poll_data_ckeck_CheckedChanged(object sender, EventArgs e)
         {
@@ -586,6 +606,21 @@ namespace Coin
             _t.Stop();
             _t.Dispose();
             _t = null;
+        }
+
+        private void coin_mode_Click(object sender, EventArgs e)
+        {
+            if (coin_mode == 1)
+            {
+                coin_mode = 0;
+                coin_mode_button.Image = global::Coin.Properties.Resources._0_switch_off;
+            }
+            else
+            {
+                coin_mode = 1;
+                coin_mode_button.Image = global::Coin.Properties.Resources._1_switch_on;
+            }
+            parentFrm.send_value("26", "" + coin_mode);
         }
 
 
