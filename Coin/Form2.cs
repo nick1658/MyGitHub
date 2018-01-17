@@ -35,8 +35,8 @@ namespace Coin
         {
             if (启动.Text == "启动")
             {
-                start_poll();
                 parentFrm.send_cmd_code("0002");//启动
+                start_poll();
                 //启动.Text = "停止";
             }
             else
@@ -204,13 +204,17 @@ namespace Coin
                 case 50:
                     if (str == "0")
                     {
-                        poll_data_ckeck.Checked = false;
-                        stop_poll();
+                        //poll_data_ckeck.Checked = false;
+                        if (poll_data_ckeck.Checked == false)
+                        {
+                            stop_poll();
+                        }
+                        
                         启动.Text = "启动";//停机信号
                     }
                     else
                     {
-                        poll_data_ckeck.Checked = true;
+                        //poll_data_ckeck.Checked = true;
                         启动.Text = "停止";//停机信号
                     }
                     break;
@@ -602,18 +606,23 @@ namespace Coin
 
         private void start_poll ()
         {
-            _t = new System.Timers.Timer(1000);
-            _t.Elapsed += poll_data;//到达时间的时候执行事件；
-            _t.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
-            _t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
+            if (_t == null)
+            {
+                _t = new System.Timers.Timer(1000);
+                _t.Elapsed += poll_data;//到达时间的时候执行事件；
+                _t.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+                _t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
+            }
         }
         private void stop_poll()
         {
-            if (_t == null) return;
-            _t.Elapsed -= poll_data;
-            _t.Stop();
-            _t.Dispose();
-            _t = null;
+            if (_t != null)
+            {
+                _t.Elapsed -= poll_data;
+                _t.Stop();
+                _t.Dispose();
+                _t = null;
+            }
         }
 
         private void coin_mode_Click(object sender, EventArgs e)
