@@ -35,6 +35,7 @@ namespace Coin
         {
             if (启动.Text == "启动")
             {
+                start_poll();
                 parentFrm.send_cmd_code("0002");//启动
                 //启动.Text = "停止";
             }
@@ -202,9 +203,16 @@ namespace Coin
                     break;
                 case 50:
                     if (str == "0")
+                    {
+                        poll_data_ckeck.Checked = false;
+                        stop_poll();
                         启动.Text = "启动";//停机信号
+                    }
                     else
+                    {
+                        poll_data_ckeck.Checked = true;
                         启动.Text = "停止";//停机信号
+                    }
                     break;
                 case 51:
                     if (Int32.Parse(str) < 11)
