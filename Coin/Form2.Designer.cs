@@ -73,6 +73,15 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.en_jnb5yuan = new System.Windows.Forms.CheckBox();
+            this.en_jnb10yuan = new System.Windows.Forms.CheckBox();
+            this.en_dao1jiao = new System.Windows.Forms.CheckBox();
+            this.en_1jiao = new System.Windows.Forms.CheckBox();
+            this.en_5jiao = new System.Windows.Forms.CheckBox();
+            this.en_1fen = new System.Windows.Forms.CheckBox();
+            this.en_2fen = new System.Windows.Forms.CheckBox();
+            this.en_5fen = new System.Windows.Forms.CheckBox();
+            this.en_1yuan = new System.Windows.Forms.CheckBox();
             this.yz_dao1jiao = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -116,15 +125,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.cpuUsage = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.coin_mode_button = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -544,15 +544,15 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.checkBox9);
-            this.groupBox5.Controls.Add(this.checkBox8);
-            this.groupBox5.Controls.Add(this.checkBox7);
-            this.groupBox5.Controls.Add(this.checkBox6);
-            this.groupBox5.Controls.Add(this.checkBox5);
-            this.groupBox5.Controls.Add(this.checkBox4);
-            this.groupBox5.Controls.Add(this.checkBox3);
-            this.groupBox5.Controls.Add(this.checkBox2);
-            this.groupBox5.Controls.Add(this.checkBox1);
+            this.groupBox5.Controls.Add(this.en_jnb5yuan);
+            this.groupBox5.Controls.Add(this.en_jnb10yuan);
+            this.groupBox5.Controls.Add(this.en_dao1jiao);
+            this.groupBox5.Controls.Add(this.en_1jiao);
+            this.groupBox5.Controls.Add(this.en_5jiao);
+            this.groupBox5.Controls.Add(this.en_1fen);
+            this.groupBox5.Controls.Add(this.en_2fen);
+            this.groupBox5.Controls.Add(this.en_5fen);
+            this.groupBox5.Controls.Add(this.en_1yuan);
             this.groupBox5.Controls.Add(this.yz_dao1jiao);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.yz_jnb_5yuan);
@@ -578,6 +578,105 @@
             this.groupBox5.TabIndex = 34;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "预置计数设置";
+            // 
+            // en_jnb5yuan
+            // 
+            this.en_jnb5yuan.AutoSize = true;
+            this.en_jnb5yuan.Location = new System.Drawing.Point(234, 213);
+            this.en_jnb5yuan.Name = "en_jnb5yuan";
+            this.en_jnb5yuan.Size = new System.Drawing.Size(15, 14);
+            this.en_jnb5yuan.TabIndex = 44;
+            this.en_jnb5yuan.UseVisualStyleBackColor = true;
+            this.en_jnb5yuan.Visible = false;
+            this.en_jnb5yuan.CheckedChanged += new System.EventHandler(this.en_jnb5yuan_CheckedChanged);
+            // 
+            // en_jnb10yuan
+            // 
+            this.en_jnb10yuan.AutoSize = true;
+            this.en_jnb10yuan.Location = new System.Drawing.Point(234, 177);
+            this.en_jnb10yuan.Name = "en_jnb10yuan";
+            this.en_jnb10yuan.Size = new System.Drawing.Size(15, 14);
+            this.en_jnb10yuan.TabIndex = 43;
+            this.en_jnb10yuan.UseVisualStyleBackColor = true;
+            this.en_jnb10yuan.Visible = false;
+            this.en_jnb10yuan.CheckedChanged += new System.EventHandler(this.en_jnb10yuan_CheckedChanged);
+            // 
+            // en_dao1jiao
+            // 
+            this.en_dao1jiao.AutoSize = true;
+            this.en_dao1jiao.Location = new System.Drawing.Point(161, 142);
+            this.en_dao1jiao.Name = "en_dao1jiao";
+            this.en_dao1jiao.Size = new System.Drawing.Size(15, 14);
+            this.en_dao1jiao.TabIndex = 42;
+            this.en_dao1jiao.UseVisualStyleBackColor = true;
+            this.en_dao1jiao.Visible = false;
+            this.en_dao1jiao.CheckedChanged += new System.EventHandler(this.en_dao1jiao_CheckedChanged);
+            // 
+            // en_1jiao
+            // 
+            this.en_1jiao.AutoSize = true;
+            this.en_1jiao.Location = new System.Drawing.Point(161, 107);
+            this.en_1jiao.Name = "en_1jiao";
+            this.en_1jiao.Size = new System.Drawing.Size(15, 14);
+            this.en_1jiao.TabIndex = 41;
+            this.en_1jiao.UseVisualStyleBackColor = true;
+            this.en_1jiao.Visible = false;
+            this.en_1jiao.CheckedChanged += new System.EventHandler(this.en_1jiao_CheckedChanged);
+            // 
+            // en_5jiao
+            // 
+            this.en_5jiao.AutoSize = true;
+            this.en_5jiao.Location = new System.Drawing.Point(161, 73);
+            this.en_5jiao.Name = "en_5jiao";
+            this.en_5jiao.Size = new System.Drawing.Size(15, 14);
+            this.en_5jiao.TabIndex = 40;
+            this.en_5jiao.UseVisualStyleBackColor = true;
+            this.en_5jiao.Visible = false;
+            this.en_5jiao.CheckedChanged += new System.EventHandler(this.en_5jiao_CheckedChanged);
+            // 
+            // en_1fen
+            // 
+            this.en_1fen.AutoSize = true;
+            this.en_1fen.Location = new System.Drawing.Point(346, 107);
+            this.en_1fen.Name = "en_1fen";
+            this.en_1fen.Size = new System.Drawing.Size(15, 14);
+            this.en_1fen.TabIndex = 39;
+            this.en_1fen.UseVisualStyleBackColor = true;
+            this.en_1fen.Visible = false;
+            this.en_1fen.CheckedChanged += new System.EventHandler(this.en_1fen_CheckedChanged);
+            // 
+            // en_2fen
+            // 
+            this.en_2fen.AutoSize = true;
+            this.en_2fen.Location = new System.Drawing.Point(346, 73);
+            this.en_2fen.Name = "en_2fen";
+            this.en_2fen.Size = new System.Drawing.Size(15, 14);
+            this.en_2fen.TabIndex = 38;
+            this.en_2fen.UseVisualStyleBackColor = true;
+            this.en_2fen.Visible = false;
+            this.en_2fen.CheckedChanged += new System.EventHandler(this.en_2fen_CheckedChanged);
+            // 
+            // en_5fen
+            // 
+            this.en_5fen.AutoSize = true;
+            this.en_5fen.Location = new System.Drawing.Point(346, 39);
+            this.en_5fen.Name = "en_5fen";
+            this.en_5fen.Size = new System.Drawing.Size(15, 14);
+            this.en_5fen.TabIndex = 37;
+            this.en_5fen.UseVisualStyleBackColor = true;
+            this.en_5fen.Visible = false;
+            this.en_5fen.CheckedChanged += new System.EventHandler(this.en_5fen_CheckedChanged);
+            // 
+            // en_1yuan
+            // 
+            this.en_1yuan.AutoSize = true;
+            this.en_1yuan.Location = new System.Drawing.Point(161, 39);
+            this.en_1yuan.Name = "en_1yuan";
+            this.en_1yuan.Size = new System.Drawing.Size(15, 14);
+            this.en_1yuan.TabIndex = 36;
+            this.en_1yuan.UseVisualStyleBackColor = true;
+            this.en_1yuan.Visible = false;
+            this.en_1yuan.CheckedChanged += new System.EventHandler(this.en_1yuan_CheckedChanged);
             // 
             // yz_dao1jiao
             // 
@@ -997,87 +1096,6 @@
             this.cpuUsage.Text = "99";
             this.cpuUsage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(161, 39);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(346, 39);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 37;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(346, 73);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 38;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(346, 107);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 39;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(161, 73);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 40;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(161, 107);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 41;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(161, 142);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 42;
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(234, 177);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 43;
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(234, 213);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(15, 14);
-            this.checkBox9.TabIndex = 44;
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
             // coin_mode_button
             // 
             this.coin_mode_button.BackColor = System.Drawing.SystemColors.Control;
@@ -1086,7 +1104,6 @@
             this.coin_mode_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.coin_mode_button.ForeColor = System.Drawing.Color.Transparent;
             this.coin_mode_button.Image = global::Coin.Properties.Resources._0_switch_off;
-            this.coin_mode_button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.coin_mode_button.Location = new System.Drawing.Point(692, 12);
             this.coin_mode_button.Name = "coin_mode_button";
             this.coin_mode_button.Size = new System.Drawing.Size(132, 45);
@@ -1237,15 +1254,15 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox dq_speed;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox en_jnb5yuan;
+        private System.Windows.Forms.CheckBox en_jnb10yuan;
+        private System.Windows.Forms.CheckBox en_dao1jiao;
+        private System.Windows.Forms.CheckBox en_1jiao;
+        private System.Windows.Forms.CheckBox en_5jiao;
+        private System.Windows.Forms.CheckBox en_1fen;
+        private System.Windows.Forms.CheckBox en_2fen;
+        private System.Windows.Forms.CheckBox en_5fen;
+        private System.Windows.Forms.CheckBox en_1yuan;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label cpuUsage;

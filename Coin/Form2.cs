@@ -640,6 +640,51 @@ namespace Coin
             parentFrm.send_value("26", "" + coin_mode);
         }
 
+        private void en_1yuan_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_5jiao_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_1jiao_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_dao1jiao_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_5fen_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_2fen_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_1fen_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_jnb10yuan_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void en_jnb5yuan_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
