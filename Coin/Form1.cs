@@ -64,12 +64,19 @@ namespace Coin
             }
             coinOp.parentFrm = this;
             txtIP.Text = "192.168.1.250";
-            radioSerial.Checked = true;
 
             send_timer = new System.Timers.Timer(500);
             send_timer.Elapsed += send_handler;//到达时间的时候执行事件；
             send_timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
-            send_timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
+            send_timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件;
+            if (MyApp.Default.download_mode == 0)
+            {
+                radioSerial.Checked = true;
+            }
+            else
+            {
+                radioNet.Checked = true;
+            }
         }
 
         private void send_handler(object sender, EventArgs e)
@@ -648,6 +655,15 @@ namespace Coin
                 send_timer.Dispose();
                 send_timer = null;
             }
+            if (radioNet.Checked == true)
+            {
+                MyApp.Default.download_mode = 1;
+            }
+            else
+            {
+                MyApp.Default.download_mode = 0;
+            }
+            MyApp.Default.Save();
             
             Thread.Sleep(100);
             Application.Exit();
