@@ -275,8 +275,15 @@ namespace Coin
                 }
                 else if (c == ';')
                 {
-                    setValue(index, newstring);
-                    newstring = "";
+                    try
+                    {
+                        setValue(index, newstring);
+                        newstring = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        return;
+                    }
                 }
                 else if (c == ':')
                 {
