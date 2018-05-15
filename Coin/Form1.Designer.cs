@@ -43,6 +43,8 @@
             this.txtIP = new System.Windows.Forms.TextBox();
             this.filePath = new System.Windows.Forms.TextBox();
             this.TFTPServer = new System.Windows.Forms.Label();
+            this.saveRecord = new System.Windows.Forms.Button();
+            this.exportRecord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // 打开串口
@@ -76,10 +78,10 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
             this.richTextBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.richTextBox1.Location = new System.Drawing.Point(166, 33);
+            this.richTextBox1.Location = new System.Drawing.Point(166, 38);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(776, 498);
+            this.richTextBox1.Size = new System.Drawing.Size(776, 493);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             this.richTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox1_KeyPress);
@@ -176,7 +178,7 @@
             this.filePath.Location = new System.Drawing.Point(280, 6);
             this.filePath.Name = "filePath";
             this.filePath.ReadOnly = true;
-            this.filePath.Size = new System.Drawing.Size(650, 21);
+            this.filePath.Size = new System.Drawing.Size(392, 21);
             this.filePath.TabIndex = 20;
             // 
             // TFTPServer
@@ -188,12 +190,38 @@
             this.TFTPServer.TabIndex = 21;
             this.TFTPServer.Text = "TFTP Server IP:";
             // 
+            // saveRecord
+            // 
+            this.saveRecord.BackColor = System.Drawing.SystemColors.Control;
+            this.saveRecord.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.saveRecord.Location = new System.Drawing.Point(792, 2);
+            this.saveRecord.Name = "saveRecord";
+            this.saveRecord.Size = new System.Drawing.Size(108, 35);
+            this.saveRecord.TabIndex = 49;
+            this.saveRecord.Text = "保存记录";
+            this.saveRecord.UseVisualStyleBackColor = true;
+            this.saveRecord.Click += new System.EventHandler(this.saveRecord_Click);
+            // 
+            // exportRecord
+            // 
+            this.exportRecord.BackColor = System.Drawing.SystemColors.Control;
+            this.exportRecord.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exportRecord.Location = new System.Drawing.Point(678, 2);
+            this.exportRecord.Name = "exportRecord";
+            this.exportRecord.Size = new System.Drawing.Size(108, 35);
+            this.exportRecord.TabIndex = 48;
+            this.exportRecord.Text = "导出记录";
+            this.exportRecord.UseVisualStyleBackColor = true;
+            this.exportRecord.Click += new System.EventHandler(this.exportRecord_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(942, 539);
+            this.Controls.Add(this.saveRecord);
+            this.Controls.Add(this.exportRecord);
             this.Controls.Add(this.TFTPServer);
             this.Controls.Add(this.filePath);
             this.Controls.Add(this.txtIP);
@@ -237,6 +265,8 @@
         private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.TextBox filePath;
         private System.Windows.Forms.Label TFTPServer;
+        private System.Windows.Forms.Button saveRecord;
+        private System.Windows.Forms.Button exportRecord;
     }
 }
 

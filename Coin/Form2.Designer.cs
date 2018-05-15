@@ -127,6 +127,8 @@
             this.cpuUsage = new System.Windows.Forms.Label();
             this.coin_mode_button = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
+            this.exportRecord = new System.Windows.Forms.Button();
+            this.saveRecord = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -1121,12 +1123,38 @@
             this.label38.TabIndex = 45;
             this.label38.Text = "清分模式";
             // 
+            // exportRecord
+            // 
+            this.exportRecord.BackColor = System.Drawing.SystemColors.Control;
+            this.exportRecord.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exportRecord.Location = new System.Drawing.Point(830, 4);
+            this.exportRecord.Name = "exportRecord";
+            this.exportRecord.Size = new System.Drawing.Size(108, 35);
+            this.exportRecord.TabIndex = 46;
+            this.exportRecord.Text = "导出记录";
+            this.exportRecord.UseVisualStyleBackColor = true;
+            this.exportRecord.Click += new System.EventHandler(this.exportRecord_Click);
+            // 
+            // saveRecord
+            // 
+            this.saveRecord.BackColor = System.Drawing.SystemColors.Control;
+            this.saveRecord.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.saveRecord.Location = new System.Drawing.Point(830, 41);
+            this.saveRecord.Name = "saveRecord";
+            this.saveRecord.Size = new System.Drawing.Size(108, 35);
+            this.saveRecord.TabIndex = 47;
+            this.saveRecord.Text = "保存记录";
+            this.saveRecord.UseVisualStyleBackColor = true;
+            this.saveRecord.Click += new System.EventHandler(this.saveRecord_Click);
+            // 
             // CoinOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(942, 533);
+            this.Controls.Add(this.saveRecord);
+            this.Controls.Add(this.exportRecord);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.coin_mode_button);
             this.Controls.Add(this.cpuUsage);
@@ -1268,6 +1296,8 @@
         private System.Windows.Forms.Label cpuUsage;
         private System.Windows.Forms.Button coin_mode_button;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button exportRecord;
+        private System.Windows.Forms.Button saveRecord;
 
     }
 }

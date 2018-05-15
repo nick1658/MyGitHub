@@ -692,6 +692,17 @@ namespace Coin
 
         }
 
+        private void exportRecord_Click(object sender, EventArgs e)
+        {
+            parentFrm.set_send_state(3);
+            parentFrm.send_cmd_code("0007");//导出数据
+        }
+
+        private void saveRecord_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0008");//导出数据
+        }
+
 
     }
 }

@@ -29,6 +29,7 @@ namespace Coin
         CoinOP coinOp = new CoinOP();
         string fileName = null;
         List<byte> buffer = new List<byte>(4096);
+        List<byte> record_buffer = new List<byte>(516*1024);
         List<string> send_buff = new List<string>(32);
         SerialPort s = new SerialPort();    //实例化一个串口对象，在前端控件中可以直接拖过来，但最好是在后端代码中写代码，这样复制到其他地方不会出错。s是一个串口的句柄  
 
@@ -141,7 +142,28 @@ namespace Coin
             string respond_str = null;
             s.Read(buff, 0, count);
             //1.缓存数据
-            buffer.AddRange(buff);
+            if (send_state == 3)//导出记录
+            {
+                string res_str = new ASCIIEncoding().GetString(buff);
+                if (res_str == "EXPORT OK\r\n")
+                {
+                    byte[] recordBytes = new byte[record_buffer.Count];
+                    record_buffer.CopyTo(0, recordBytes, 0, record_buffer.Count);
+                    System.IO.File.WriteAllBytes("Hello.txt", recordBytes);
+                    record_buffer.RemoveRange(0, record_buffer.Count);
+                    set_send_state(0);
+                    exportRecord.Enabled = true;
+                }
+                else
+                {
+                    record_buffer.AddRange(buff);
+                }
+                buffer.RemoveRange(0, buffer.Count);
+            }
+            else
+            {
+                buffer.AddRange(buff);
+            }
             if (buffer.Count > 0) //至少包含帧头（2字节）、长度（1字节）、校验位（1字节）；根据设计不同而不同
             {
                 byte[] ReceiveBytes = new byte[buffer.Count];
@@ -231,7 +253,7 @@ namespace Coin
                 }
                 richTextBox1.Clear();
                 richTextBox1.AppendText(str_temp+content);
-                
+
                 richTextBox1.Focus();
                 richTextBox1.Select(richTextBox1.TextLength, 0);
                 richTextBox1.ScrollToCaret();
@@ -738,6 +760,18 @@ namespace Coin
             {
                 //MessageBox.Show("发送指令完成", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void exportRecord_Click(object sender, EventArgs e)
+        {
+            exportRecord.Enabled = false;
+            set_send_state(3);
+            send_cmd_code("0007");//导出数据
+        }
+
+        private void saveRecord_Click(object sender, EventArgs e)
+        {
+            send_cmd_code("0008");//导出数据
         }
     }
 }
