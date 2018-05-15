@@ -153,12 +153,13 @@ namespace Coin
                     record_buffer.RemoveRange(0, record_buffer.Count);
                     set_send_state(0);
                     exportRecord.Enabled = true;
+                    buffer.RemoveRange(0, buffer.Count);
                 }
                 else
                 {
+                    this.AddData(Encoding.Default.GetBytes("."));//输出数据
                     record_buffer.AddRange(buff);
                 }
-                buffer.RemoveRange(0, buffer.Count);
             }
             else
             {
