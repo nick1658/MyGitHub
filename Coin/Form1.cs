@@ -144,22 +144,8 @@ namespace Coin
             //1.缓存数据
             if (send_state == 3)//导出记录
             {
-                string res_str = new ASCIIEncoding().GetString(buff);
-                if (res_str == "EXPORT OK\r\n")
-                {
-                    byte[] recordBytes = new byte[record_buffer.Count];
-                    record_buffer.CopyTo(0, recordBytes, 0, record_buffer.Count);
-                    System.IO.File.WriteAllBytes("Hello.txt", recordBytes);
-                    record_buffer.RemoveRange(0, record_buffer.Count);
-                    set_send_state(0);
-                    exportRecord.Enabled = true;
-                    buffer.RemoveRange(0, buffer.Count);
-                }
-                else
-                {
-                    this.AddData(Encoding.Default.GetBytes("."));//输出数据
-                    record_buffer.AddRange(buff);
-                }
+                this.AddData(Encoding.Default.GetBytes("."));//输出数据
+                record_buffer.AddRange(buff);
             }
             else
             {
@@ -772,7 +758,13 @@ namespace Coin
 
         private void saveRecord_Click(object sender, EventArgs e)
         {
-            send_cmd_code("0008");//导出数据
+            byte[] recordBytes = new byte[record_buffer.Count];
+            record_buffer.CopyTo(0, recordBytes, 0, record_buffer.Count);
+            System.IO.File.WriteAllBytes("record.txt", recordBytes);
+            exportRecord.Enabled = true;
+            record_buffer.RemoveRange(0, record_buffer.Count);
+            buffer.RemoveRange(0, buffer.Count);
+            set_send_state(0);
         }
     }
 }
