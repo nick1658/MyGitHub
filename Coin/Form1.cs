@@ -21,7 +21,7 @@ namespace Coin
     {
         public const int FRAME_SIZE = 512;
 
-        System.Timers.Timer send_timer;
+        System.Timers.Timer send_timer, save_timer;
         int send_state = 0;
         int respond_msg = 0xA0000;
         int send_lock = 0;
@@ -70,6 +70,9 @@ namespace Coin
             send_timer.Elapsed += send_handler;//到达时间的时候执行事件；
             send_timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
             send_timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件;
+            save_timer = new System.Timers.Timer(500);
+            save_timer.Elapsed += save_handler;//到达时间的时候执行事件；
+            save_timer.AutoReset = false;//设置是执行一次（false）还是一直执行(true)；
             if (MyApp.Default.download_mode == 0)
             {
                 radioSerial.Checked = true;
@@ -94,6 +97,16 @@ namespace Coin
                 this.SendData(sendData);
             }
             Interlocked.Exchange(ref send_lock, 0);
+        }
+        private void save_handler(object sender, EventArgs e)
+        {
+            byte[] recordBytes = new byte[record_buffer.Count];
+            record_buffer.CopyTo(0, recordBytes, 0, record_buffer.Count);
+            System.IO.File.WriteAllBytes("record.txt", recordBytes);
+            exportRecord.Enabled = true;
+            record_buffer.RemoveRange(0, record_buffer.Count);
+            buffer.RemoveRange(0, buffer.Count);
+            set_send_state(0);
         }
 
         private bool open_com ()
@@ -144,8 +157,10 @@ namespace Coin
             //1.缓存数据
             if (send_state == 3)//导出记录
             {
-                this.AddData(Encoding.Default.GetBytes("."));//输出数据
+                //this.AddData(Encoding.Default.GetBytes("."));//输出数据
+                save_timer.Stop();
                 record_buffer.AddRange(buff);
+                save_timer.Start();
             }
             else
             {
@@ -230,6 +245,7 @@ namespace Coin
          {
             this.BeginInvoke(new MethodInvoker(delegate
             {
+                /*
                 string str_temp;
 
                 str_temp = richTextBox1.Text;
@@ -239,7 +255,8 @@ namespace Coin
                     str_temp = str_temp.Remove(0, len + 1);
                 }
                 richTextBox1.Clear();
-                richTextBox1.AppendText(str_temp+content);
+                richTextBox1.AppendText(str_temp+content);*/
+                richTextBox1.AppendText(content);
 
                 richTextBox1.Focus();
                 richTextBox1.Select(richTextBox1.TextLength, 0);
@@ -664,6 +681,13 @@ namespace Coin
                 send_timer.Dispose();
                 send_timer = null;
             }
+            if (save_timer != null)
+            {
+                save_timer.Elapsed -= save_handler;
+                save_timer.Stop();
+                save_timer.Dispose();
+                save_timer = null;
+            }
             if (radioNet.Checked == true)
             {
                 MyApp.Default.download_mode = 1;
@@ -754,17 +778,6 @@ namespace Coin
             exportRecord.Enabled = false;
             set_send_state(3);
             send_cmd_code("0007");//导出数据
-        }
-
-        private void saveRecord_Click(object sender, EventArgs e)
-        {
-            byte[] recordBytes = new byte[record_buffer.Count];
-            record_buffer.CopyTo(0, recordBytes, 0, record_buffer.Count);
-            System.IO.File.WriteAllBytes("record.txt", recordBytes);
-            exportRecord.Enabled = true;
-            record_buffer.RemoveRange(0, record_buffer.Count);
-            buffer.RemoveRange(0, buffer.Count);
-            set_send_state(0);
         }
     }
 }

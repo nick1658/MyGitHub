@@ -31,3 +31,9 @@
 *.out
 *.app
 *.pdb
+*.nlp
+Coin/bin/Debug/CoinUpdate.vshost.exe
+Coin/bin/Debug/CoinUpdate.vshost.exe
+Coin/Coin.sln
+*.Cache
+*.Cache
