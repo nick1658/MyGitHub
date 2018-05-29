@@ -70,7 +70,7 @@ namespace Coin
             send_timer.Elapsed += send_handler;//到达时间的时候执行事件；
             send_timer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
             send_timer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件;
-            save_timer = new System.Timers.Timer(500);
+            save_timer = new System.Timers.Timer(3000);
             save_timer.Elapsed += save_handler;//到达时间的时候执行事件；
             save_timer.AutoReset = false;//设置是执行一次（false）还是一直执行(true)；
             if (MyApp.Default.download_mode == 0)
@@ -775,6 +775,8 @@ namespace Coin
 
         private void exportRecord_Click(object sender, EventArgs e)
         {
+            send_str("version\r");
+            Thread.Sleep(100);
             exportRecord.Enabled = false;
             set_send_state(3);
             send_cmd_code("0007");//导出数据
