@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoinOP));
-            this.kick1_delay = new System.Windows.Forms.TextBox();
+            this.kick0_delay = new System.Windows.Forms.TextBox();
+            this.kick0_keep = new System.Windows.Forms.TextBox();
             this.kick1_keep = new System.Windows.Forms.TextBox();
-            this.kick2_keep = new System.Windows.Forms.TextBox();
-            this.kick2_delay = new System.Windows.Forms.TextBox();
+            this.kick1_delay = new System.Windows.Forms.TextBox();
             this.dq_yb = new System.Windows.Forms.TextBox();
             this.dq_zje = new System.Windows.Forms.TextBox();
             this.dq_1fen = new System.Windows.Forms.TextBox();
@@ -129,6 +129,24 @@
             this.label38 = new System.Windows.Forms.Label();
             this.exportRecord = new System.Windows.Forms.Button();
             this.saveRecord = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.hopper_1jiao = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.hopper_5jiao = new System.Windows.Forms.TextBox();
+            this.hopper_test = new System.Windows.Forms.Button();
+            this.hopper_1yuan = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.kick2_keep = new System.Windows.Forms.TextBox();
+            this.kick2_delay = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.kick3_keep = new System.Windows.Forms.TextBox();
+            this.kick3_delay = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -136,39 +154,42 @@
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
-            // kick1_delay
+            // kick0_delay
             // 
-            this.kick1_delay.Location = new System.Drawing.Point(97, 35);
-            this.kick1_delay.Name = "kick1_delay";
-            this.kick1_delay.Size = new System.Drawing.Size(80, 30);
-            this.kick1_delay.TabIndex = 22;
-            this.kick1_delay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick1_delay_KeyPress);
+            this.kick0_delay.Location = new System.Drawing.Point(97, 25);
+            this.kick0_delay.Name = "kick0_delay";
+            this.kick0_delay.Size = new System.Drawing.Size(80, 30);
+            this.kick0_delay.TabIndex = 22;
+            this.kick0_delay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick1_delay_KeyPress);
+            // 
+            // kick0_keep
+            // 
+            this.kick0_keep.Location = new System.Drawing.Point(97, 59);
+            this.kick0_keep.Name = "kick0_keep";
+            this.kick0_keep.Size = new System.Drawing.Size(80, 30);
+            this.kick0_keep.TabIndex = 23;
+            this.kick0_keep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick1_keep_KeyPress);
             // 
             // kick1_keep
             // 
-            this.kick1_keep.Location = new System.Drawing.Point(97, 75);
+            this.kick1_keep.Location = new System.Drawing.Point(97, 59);
             this.kick1_keep.Name = "kick1_keep";
             this.kick1_keep.Size = new System.Drawing.Size(80, 30);
             this.kick1_keep.TabIndex = 23;
-            this.kick1_keep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick1_keep_KeyPress);
+            this.kick1_keep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick2_keep_KeyPress);
             // 
-            // kick2_keep
+            // kick1_delay
             // 
-            this.kick2_keep.Location = new System.Drawing.Point(97, 75);
-            this.kick2_keep.Name = "kick2_keep";
-            this.kick2_keep.Size = new System.Drawing.Size(80, 30);
-            this.kick2_keep.TabIndex = 23;
-            this.kick2_keep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick2_keep_KeyPress);
-            // 
-            // kick2_delay
-            // 
-            this.kick2_delay.Location = new System.Drawing.Point(97, 35);
-            this.kick2_delay.Name = "kick2_delay";
-            this.kick2_delay.Size = new System.Drawing.Size(80, 30);
-            this.kick2_delay.TabIndex = 22;
-            this.kick2_delay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick2_delay_KeyPress);
+            this.kick1_delay.Location = new System.Drawing.Point(97, 25);
+            this.kick1_delay.Name = "kick1_delay";
+            this.kick1_delay.Size = new System.Drawing.Size(80, 30);
+            this.kick1_delay.TabIndex = 22;
+            this.kick1_delay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick2_delay_KeyPress);
             // 
             // dq_yb
             // 
@@ -357,7 +378,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Location = new System.Drawing.Point(6, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 20;
@@ -366,7 +387,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 78);
+            this.label2.Location = new System.Drawing.Point(6, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 21;
@@ -374,17 +395,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.kick1_keep);
-            this.groupBox1.Controls.Add(this.kick1_delay);
+            this.groupBox1.Controls.Add(this.kick0_keep);
+            this.groupBox1.Controls.Add(this.kick0_delay);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(204, 128);
+            this.groupBox1.Size = new System.Drawing.Size(204, 96);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "踢币电磁铁1";
+            this.groupBox1.Text = "踢币电磁铁0";
             // 
             // groupBox4
             // 
@@ -412,7 +433,7 @@
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox4.Location = new System.Drawing.Point(222, 257);
+            this.groupBox4.Location = new System.Drawing.Point(595, 251);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(367, 264);
             this.groupBox4.TabIndex = 26;
@@ -771,22 +792,22 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.kick2_keep);
-            this.groupBox2.Controls.Add(this.kick2_delay);
+            this.groupBox2.Controls.Add(this.kick1_keep);
+            this.groupBox2.Controls.Add(this.kick1_delay);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 155);
+            this.groupBox2.Location = new System.Drawing.Point(12, 114);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(204, 128);
+            this.groupBox2.Size = new System.Drawing.Size(204, 95);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "踢币电磁铁2";
+            this.groupBox2.Text = "踢币电磁铁1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 78);
+            this.label3.Location = new System.Drawing.Point(6, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 21;
@@ -795,7 +816,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 38);
+            this.label4.Location = new System.Drawing.Point(6, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 20;
@@ -805,7 +826,7 @@
             // 
             this.返回下载.BackColor = System.Drawing.SystemColors.Control;
             this.返回下载.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.返回下载.Location = new System.Drawing.Point(774, 443);
+            this.返回下载.Location = new System.Drawing.Point(180, 196);
             this.返回下载.Name = "返回下载";
             this.返回下载.Size = new System.Drawing.Size(156, 81);
             this.返回下载.TabIndex = 35;
@@ -819,10 +840,12 @@
             this.groupBox3.Controls.Add(this.清零);
             this.groupBox3.Controls.Add(this.打印);
             this.groupBox3.Controls.Add(this.清除报警);
+            this.groupBox3.Controls.Add(this.同步数据);
+            this.groupBox3.Controls.Add(this.返回下载);
             this.groupBox3.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox3.Location = new System.Drawing.Point(595, 233);
+            this.groupBox3.Location = new System.Drawing.Point(973, 225);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(344, 201);
+            this.groupBox3.Size = new System.Drawing.Size(344, 288);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "操作";
@@ -831,7 +854,7 @@
             // 
             this.同步数据.BackColor = System.Drawing.SystemColors.Control;
             this.同步数据.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.同步数据.Location = new System.Drawing.Point(602, 443);
+            this.同步数据.Location = new System.Drawing.Point(7, 197);
             this.同步数据.Name = "同步数据";
             this.同步数据.Size = new System.Drawing.Size(156, 81);
             this.同步数据.TabIndex = 37;
@@ -850,7 +873,7 @@
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox6.Location = new System.Drawing.Point(12, 299);
+            this.groupBox6.Location = new System.Drawing.Point(222, 288);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(204, 200);
             this.groupBox6.TabIndex = 25;
@@ -1147,12 +1170,191 @@
             this.saveRecord.UseVisualStyleBackColor = true;
             this.saveRecord.Click += new System.EventHandler(this.saveRecord_Click);
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label39);
+            this.groupBox8.Controls.Add(this.label40);
+            this.groupBox8.Controls.Add(this.hopper_1jiao);
+            this.groupBox8.Controls.Add(this.label41);
+            this.groupBox8.Controls.Add(this.hopper_5jiao);
+            this.groupBox8.Controls.Add(this.hopper_test);
+            this.groupBox8.Controls.Add(this.hopper_1yuan);
+            this.groupBox8.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox8.Location = new System.Drawing.Point(973, 9);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(344, 159);
+            this.groupBox8.TabIndex = 48;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Hopper 测试";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(9, 124);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(42, 21);
+            this.label39.TabIndex = 47;
+            this.label39.Text = "1角";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(9, 90);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(42, 21);
+            this.label40.TabIndex = 46;
+            this.label40.Text = "5角";
+            // 
+            // hopper_1jiao
+            // 
+            this.hopper_1jiao.Location = new System.Drawing.Point(57, 118);
+            this.hopper_1jiao.Name = "hopper_1jiao";
+            this.hopper_1jiao.Size = new System.Drawing.Size(86, 31);
+            this.hopper_1jiao.TabIndex = 47;
+            this.hopper_1jiao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hopper_1jiao_KeyPress);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(9, 56);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(42, 21);
+            this.label41.TabIndex = 45;
+            this.label41.Text = "1元";
+            // 
+            // hopper_5jiao
+            // 
+            this.hopper_5jiao.Location = new System.Drawing.Point(57, 84);
+            this.hopper_5jiao.Name = "hopper_5jiao";
+            this.hopper_5jiao.Size = new System.Drawing.Size(86, 31);
+            this.hopper_5jiao.TabIndex = 46;
+            this.hopper_5jiao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hopper_5jiao_KeyPress);
+            // 
+            // hopper_test
+            // 
+            this.hopper_test.BackColor = System.Drawing.SystemColors.Control;
+            this.hopper_test.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.hopper_test.Location = new System.Drawing.Point(170, 56);
+            this.hopper_test.Name = "hopper_test";
+            this.hopper_test.Size = new System.Drawing.Size(156, 81);
+            this.hopper_test.TabIndex = 16;
+            this.hopper_test.Text = "找零测试";
+            this.hopper_test.UseVisualStyleBackColor = true;
+            this.hopper_test.Click += new System.EventHandler(this.hopper_test_Click);
+            // 
+            // hopper_1yuan
+            // 
+            this.hopper_1yuan.Location = new System.Drawing.Point(57, 50);
+            this.hopper_1yuan.Name = "hopper_1yuan";
+            this.hopper_1yuan.Size = new System.Drawing.Size(86, 31);
+            this.hopper_1yuan.TabIndex = 45;
+            this.hopper_1yuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hopper_1yuan_KeyPress);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.kick2_keep);
+            this.groupBox9.Controls.Add(this.kick2_delay);
+            this.groupBox9.Controls.Add(this.label42);
+            this.groupBox9.Controls.Add(this.label43);
+            this.groupBox9.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox9.Location = new System.Drawing.Point(12, 217);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(204, 95);
+            this.groupBox9.TabIndex = 25;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "踢币电磁铁2";
+            // 
+            // kick2_keep
+            // 
+            this.kick2_keep.Location = new System.Drawing.Point(97, 59);
+            this.kick2_keep.Name = "kick2_keep";
+            this.kick2_keep.Size = new System.Drawing.Size(80, 30);
+            this.kick2_keep.TabIndex = 23;
+            this.kick2_keep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick2_keep_KeyPress_1);
+            // 
+            // kick2_delay
+            // 
+            this.kick2_delay.Location = new System.Drawing.Point(97, 25);
+            this.kick2_delay.Name = "kick2_delay";
+            this.kick2_delay.Size = new System.Drawing.Size(80, 30);
+            this.kick2_delay.TabIndex = 22;
+            this.kick2_delay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick2_delay_KeyPress_1);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 62);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(89, 20);
+            this.label42.TabIndex = 21;
+            this.label42.Text = "保持时间";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 28);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(89, 20);
+            this.label43.TabIndex = 20;
+            this.label43.Text = "踢币延时";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.kick3_keep);
+            this.groupBox10.Controls.Add(this.kick3_delay);
+            this.groupBox10.Controls.Add(this.label44);
+            this.groupBox10.Controls.Add(this.label45);
+            this.groupBox10.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox10.Location = new System.Drawing.Point(12, 318);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(204, 95);
+            this.groupBox10.TabIndex = 49;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "踢币电磁铁3";
+            // 
+            // kick3_keep
+            // 
+            this.kick3_keep.Location = new System.Drawing.Point(97, 59);
+            this.kick3_keep.Name = "kick3_keep";
+            this.kick3_keep.Size = new System.Drawing.Size(80, 30);
+            this.kick3_keep.TabIndex = 23;
+            this.kick3_keep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick3_keep_KeyPress);
+            // 
+            // kick3_delay
+            // 
+            this.kick3_delay.Location = new System.Drawing.Point(97, 25);
+            this.kick3_delay.Name = "kick3_delay";
+            this.kick3_delay.Size = new System.Drawing.Size(80, 30);
+            this.kick3_delay.TabIndex = 22;
+            this.kick3_delay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.kick3_delay_KeyPress);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(6, 62);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(89, 20);
+            this.label44.TabIndex = 21;
+            this.label44.Text = "保持时间";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(6, 28);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(89, 20);
+            this.label45.TabIndex = 20;
+            this.label45.Text = "踢币延时";
+            // 
             // CoinOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(942, 533);
+            this.ClientSize = new System.Drawing.Size(1329, 536);
+            this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.groupBox9);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.saveRecord);
             this.Controls.Add(this.exportRecord);
             this.Controls.Add(this.label38);
@@ -1163,9 +1365,7 @@
             this.Controls.Add(this.poll_data_ckeck);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.同步数据);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.返回下载);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -1191,6 +1391,12 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1205,8 +1411,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox kick1_keep;
-        private System.Windows.Forms.TextBox kick1_delay;
+        private System.Windows.Forms.TextBox kick0_keep;
+        private System.Windows.Forms.TextBox kick0_delay;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox dq_yb;
         private System.Windows.Forms.Label label5;
@@ -1244,8 +1450,8 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox kick2_keep;
-        private System.Windows.Forms.TextBox kick2_delay;
+        private System.Windows.Forms.TextBox kick1_keep;
+        private System.Windows.Forms.TextBox kick1_delay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button 返回下载;
@@ -1298,6 +1504,24 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Button exportRecord;
         private System.Windows.Forms.Button saveRecord;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox hopper_1jiao;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox hopper_5jiao;
+        private System.Windows.Forms.Button hopper_test;
+        private System.Windows.Forms.TextBox hopper_1yuan;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox kick2_keep;
+        private System.Windows.Forms.TextBox kick2_delay;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.TextBox kick3_keep;
+        private System.Windows.Forms.TextBox kick3_delay;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
 
     }
 }

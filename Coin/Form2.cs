@@ -57,10 +57,10 @@ namespace Coin
 
         private void CoinOP_Load(object sender, EventArgs e)
         {
-            kick1_delay.Text = "0";
+            kick0_delay.Text = "0";
+            kick0_keep.Text = "0";
             kick1_keep.Text = "0";
-            kick2_keep.Text = "0";
-            kick2_delay.Text = "0";
+            kick1_delay.Text = "0";
             yz_1yuan.Text = "0";
             yz_5jiao.Text = "0";
             yz_1jiao.Text = "0";
@@ -84,6 +84,9 @@ namespace Coin
             full_rej_pos.Text = "0";
             full_stop_num.Text = "0";
             system_boot_delay.Text = "0";
+            hopper_1yuan.Text = "1";
+            hopper_5jiao.Text = "1";
+            hopper_1jiao.Text = "1";
             dq_speed.Text = "9999";
 
             cb_coinType.Items.Add("1元");
@@ -106,16 +109,16 @@ namespace Coin
             switch (index)
             {
                 case 1:
-                    kick1_delay.Text = str;
+                    kick0_delay.Text = str;
                     break;
                 case 2:
-                    kick1_keep.Text = str;
+                    kick0_keep.Text = str;
                     break;
                 case 3:
-                    kick2_delay.Text = str;
+                    kick1_delay.Text = str;
                     break;
                 case 4:
-                    kick2_keep.Text = str;
+                    kick1_keep.Text = str;
                     break;
                 case 5:
                     yz_1yuan.Text = str;
@@ -245,6 +248,18 @@ namespace Coin
                 case 58:
                     dq_speed.Text = str;
                     break;
+                case 60:
+                    kick2_delay.Text = str;
+                    break;
+                case 61:
+                    kick2_keep.Text = str;
+                    break;
+                case 62:
+                    kick3_delay.Text = str;
+                    break;
+                case 63:
+                    kick3_keep.Text = str;
+                    break;
                 default:
                     break;
             }
@@ -326,7 +341,7 @@ namespace Coin
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("1", kick1_delay.Text);
+                    parentFrm.send_value("1", kick0_delay.Text);
                 }
                 
             }  
@@ -338,7 +353,7 @@ namespace Coin
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("2", kick1_keep.Text);
+                    parentFrm.send_value("2", kick0_keep.Text);
                 }
             }  
         }
@@ -349,7 +364,7 @@ namespace Coin
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("3", kick2_delay.Text);
+                    parentFrm.send_value("3", kick1_delay.Text);
                 }
             }
         }
@@ -361,7 +376,7 @@ namespace Coin
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("4", kick2_keep.Text);
+                    parentFrm.send_value("4", kick1_keep.Text);
                 }
             }
         }
@@ -701,6 +716,90 @@ namespace Coin
         private void saveRecord_Click(object sender, EventArgs e)
         {
             parentFrm.send_cmd_code("0008");//导出数据
+        }
+
+        private void hopper_test_Click(object sender, EventArgs e)
+        {
+            if (hopper_1yuan.Text == "")
+            {
+                hopper_1yuan.Text = "1";
+            }
+            if (hopper_5jiao.Text == "")
+            {
+                hopper_5jiao.Text = "1";
+            }
+            if (hopper_1jiao.Text == "")
+            {
+                hopper_1jiao.Text = "1";
+            }
+            parentFrm.send_hopper_value("80", hopper_1yuan.Text, hopper_5jiao.Text, hopper_1jiao.Text);
+        }
+
+        private void hopper_1yuan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void hopper_5jiao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void hopper_1jiao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void kick2_delay_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("60", kick2_delay.Text);
+                }
+            }
+
+        }
+
+        private void kick2_keep_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("61", kick2_keep.Text);
+                }
+            }
+
+        }
+
+        private void kick3_delay_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("62", kick3_delay.Text);
+                }
+            }
+
+        }
+
+        private void kick3_keep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("63", kick3_keep.Text);
+                }
+            }
+
         }
 
 

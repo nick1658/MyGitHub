@@ -520,26 +520,28 @@ namespace Coin
             string a_str = string.Format("{0:X4}", addr);
             int value = int.Parse(value_str) % 10000;
             string v_str = string.Format("{0:X4}", value);
-            //byte[] sendData = null;
-            //sendData = Encoding.ASCII.GetBytes(":02" + a_str + "09" + v_str + " ");
-            //sendData = Encoding.ASCII.GetBytes(":02" + a_str + "09" + v_str + RecordParse(":02" + a_str + "09" + v_str + "FF"));
-            //if (this.SendData(sendData))//如果发送数据成功
-            //{
-            //}
-
             while (send_lock == 1) ;
             Interlocked.Exchange(ref send_lock, 1);
             send_buff.Add(":02" + a_str + "09" + v_str + RecordParse(":02" + a_str + "09" + v_str + "FF"));
             Interlocked.Exchange(ref send_lock, 0);
         }
+        public void send_hopper_value(string addr_str, string value_str, string value_str1, string value_str2)
+        {
+            int addr = int.Parse(addr_str) % 10000;
+            string a_str = string.Format("{0:X4}", addr);
+            int value = int.Parse(value_str) % 256;
+            int value1 = int.Parse(value_str1) % 256;
+            int value2 = int.Parse(value_str2) % 256;
+            string v_str = string.Format("{0:X2}", value);
+            string v_str1 = string.Format("{0:X2}", value1);
+            string v_str2 = string.Format("{0:X2}", value2);
+            while (send_lock == 1) ;
+            Interlocked.Exchange(ref send_lock, 1);
+            send_buff.Add(":03" + a_str + "0A" + v_str + v_str1 + v_str2 + RecordParse(":03" + a_str + "0A" + v_str + v_str1 + v_str2 + "FF"));
+            Interlocked.Exchange(ref send_lock, 0);
+        }
         public void send_cmd_code(string str)
         {
-            //byte[] sendData = null;
-            //sendData = Encoding.ASCII.GetBytes(":02000008" + str + RecordParse(":02000008" + str + "FF"));
-
-            //if (this.SendData(sendData))//如果发送数据成功
-            //{
-            //}
             while (send_lock == 1);
             Interlocked.Exchange(ref send_lock, 1);
             send_buff.Add(":02000008" + str + RecordParse(":02000008" + str + "FF"));
