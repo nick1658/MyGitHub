@@ -101,9 +101,23 @@ namespace Coin
         private void save_handler(object sender, EventArgs e)
         {
             byte[] recordBytes = new byte[record_buffer.Count];
+            string filePath = "";
             record_buffer.CopyTo(0, recordBytes, 0, record_buffer.Count);
-            System.IO.File.WriteAllBytes("record.txt", recordBytes);
+            if (!Directory.Exists(@"ExportData"))
+            {
+                Directory.CreateDirectory(@"ExportData");
+            }
+            if (coinOp.isHistoryRecord == 1)
+            {
+                filePath = "ExportData\\HistoryData " + DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss") + ".txt";
+            }
+            else
+            {
+                filePath = "ExportData\\DetectData " + DateTime.Now.ToString("yyyy-MM-dd hh-mm-ss") + ".txt";
+            }
+            System.IO.File.WriteAllBytes(filePath, recordBytes);
             exportRecord.Enabled = true;
+            coinOp.Save_finished();
             record_buffer.RemoveRange(0, record_buffer.Count);
             buffer.RemoveRange(0, buffer.Count);
             set_send_state(0);
@@ -498,17 +512,6 @@ namespace Coin
                 }
                 tCheckSUM += tData[n];
             }
-
-            //! get check sum
-            //try
-            //{
-            //    tCheckSUM += Byte.Parse(tHexRecord.Substring(9 + tData.Length * 2, 2), System.Globalization.NumberStyles.AllowHexSpecifier);
-            //}
-            //catch (Exception Err)
-            //{
-            //    Err.ToString();
-            //    return null;
-            //}
             tCheckSUM %= 256;
             tCheckSUM = 0x100 - tCheckSUM;
             tCheckSUM &= 0xFF;

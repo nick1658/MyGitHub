@@ -14,6 +14,7 @@ namespace Coin
     {
 
         public Form1 parentFrm;
+        public int isHistoryRecord = 0;
 
         System.Timers.Timer _t;
 
@@ -318,6 +319,12 @@ namespace Coin
                 }
             }
            
+        }
+        public void Save_finished ()
+        {
+            exportRecord.Enabled = true;
+            saveRecord.Enabled = true;
+            isHistoryRecord = 0;
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -709,12 +716,19 @@ namespace Coin
 
         private void exportRecord_Click(object sender, EventArgs e)
         {
+            isHistoryRecord = 0;
+            saveRecord.Enabled = false;
+            exportRecord.Enabled = false;
             parentFrm.set_send_state(3);
             parentFrm.send_cmd_code("0007");//导出数据
         }
 
         private void saveRecord_Click(object sender, EventArgs e)
         {
+            isHistoryRecord = 1;
+            saveRecord.Enabled = false;
+            exportRecord.Enabled = false;
+            parentFrm.set_send_state(3);
             parentFrm.send_cmd_code("0008");//导出数据
         }
 

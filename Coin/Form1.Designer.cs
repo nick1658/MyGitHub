@@ -113,11 +113,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(162, 4);
+            this.label1.Location = new System.Drawing.Point(174, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 21);
+            this.label1.Size = new System.Drawing.Size(102, 21);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Bin文件路径：";
+            this.label1.Text = "Bin文件路径:";
             // 
             // 重启
             // 
@@ -174,10 +174,10 @@
             // 
             // filePath
             // 
-            this.filePath.Location = new System.Drawing.Point(280, 6);
+            this.filePath.Location = new System.Drawing.Point(280, 10);
             this.filePath.Name = "filePath";
             this.filePath.ReadOnly = true;
-            this.filePath.Size = new System.Drawing.Size(541, 21);
+            this.filePath.Size = new System.Drawing.Size(512, 21);
             this.filePath.TabIndex = 20;
             // 
             // TFTPServer
@@ -193,11 +193,11 @@
             // 
             this.exportRecord.BackColor = System.Drawing.SystemColors.Control;
             this.exportRecord.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.exportRecord.Location = new System.Drawing.Point(825, 3);
+            this.exportRecord.Location = new System.Drawing.Point(798, 3);
             this.exportRecord.Name = "exportRecord";
-            this.exportRecord.Size = new System.Drawing.Size(108, 35);
+            this.exportRecord.Size = new System.Drawing.Size(135, 35);
             this.exportRecord.TabIndex = 48;
-            this.exportRecord.Text = "导出记录";
+            this.exportRecord.Text = "导出检测数据";
             this.exportRecord.UseVisualStyleBackColor = true;
             this.exportRecord.Click += new System.EventHandler(this.exportRecord_Click);
             // 

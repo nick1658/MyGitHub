@@ -826,7 +826,7 @@
             // 
             this.返回下载.BackColor = System.Drawing.SystemColors.Control;
             this.返回下载.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.返回下载.Location = new System.Drawing.Point(180, 196);
+            this.返回下载.Location = new System.Drawing.Point(22, 419);
             this.返回下载.Name = "返回下载";
             this.返回下载.Size = new System.Drawing.Size(156, 81);
             this.返回下载.TabIndex = 35;
@@ -841,7 +841,6 @@
             this.groupBox3.Controls.Add(this.打印);
             this.groupBox3.Controls.Add(this.清除报警);
             this.groupBox3.Controls.Add(this.同步数据);
-            this.groupBox3.Controls.Add(this.返回下载);
             this.groupBox3.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox3.Location = new System.Drawing.Point(973, 225);
             this.groupBox3.Name = "groupBox3";
@@ -873,7 +872,7 @@
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox6.Location = new System.Drawing.Point(222, 288);
+            this.groupBox6.Location = new System.Drawing.Point(222, 260);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(204, 200);
             this.groupBox6.TabIndex = 25;
@@ -1150,11 +1149,11 @@
             // 
             this.exportRecord.BackColor = System.Drawing.SystemColors.Control;
             this.exportRecord.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.exportRecord.Location = new System.Drawing.Point(830, 4);
+            this.exportRecord.Location = new System.Drawing.Point(260, 492);
             this.exportRecord.Name = "exportRecord";
-            this.exportRecord.Size = new System.Drawing.Size(108, 35);
+            this.exportRecord.Size = new System.Drawing.Size(135, 35);
             this.exportRecord.TabIndex = 46;
-            this.exportRecord.Text = "导出记录";
+            this.exportRecord.Text = "导出检测数据";
             this.exportRecord.UseVisualStyleBackColor = true;
             this.exportRecord.Click += new System.EventHandler(this.exportRecord_Click);
             // 
@@ -1162,11 +1161,11 @@
             // 
             this.saveRecord.BackColor = System.Drawing.SystemColors.Control;
             this.saveRecord.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.saveRecord.Location = new System.Drawing.Point(830, 41);
+            this.saveRecord.Location = new System.Drawing.Point(411, 492);
             this.saveRecord.Name = "saveRecord";
-            this.saveRecord.Size = new System.Drawing.Size(108, 35);
+            this.saveRecord.Size = new System.Drawing.Size(136, 35);
             this.saveRecord.TabIndex = 47;
-            this.saveRecord.Text = "保存记录";
+            this.saveRecord.Text = "导出历史记录";
             this.saveRecord.UseVisualStyleBackColor = true;
             this.saveRecord.Click += new System.EventHandler(this.saveRecord_Click);
             // 
@@ -1351,12 +1350,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1329, 536);
+            this.ClientSize = new System.Drawing.Size(1324, 536);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.saveRecord);
             this.Controls.Add(this.exportRecord);
+            this.Controls.Add(this.返回下载);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.coin_mode_button);
             this.Controls.Add(this.cpuUsage);
