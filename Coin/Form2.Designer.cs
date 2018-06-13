@@ -147,6 +147,8 @@
             this.kick3_delay = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.inhibitCoin_check = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -949,6 +951,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.inhibitCoin_check);
+            this.groupBox7.Controls.Add(this.label46);
             this.groupBox7.Controls.Add(this.label11);
             this.groupBox7.Controls.Add(this.cb_coinType);
             this.groupBox7.Controls.Add(this.tz_L_Max);
@@ -963,9 +967,9 @@
             this.groupBox7.Controls.Add(this.label34);
             this.groupBox7.Controls.Add(this.label35);
             this.groupBox7.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox7.Location = new System.Drawing.Point(595, 67);
+            this.groupBox7.Location = new System.Drawing.Point(595, 59);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(320, 160);
+            this.groupBox7.Size = new System.Drawing.Size(320, 186);
             this.groupBox7.TabIndex = 36;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "特征值";
@@ -973,7 +977,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 34);
+            this.label11.Location = new System.Drawing.Point(21, 29);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 21);
             this.label11.TabIndex = 34;
@@ -982,7 +986,7 @@
             // cb_coinType
             // 
             this.cb_coinType.FormattingEnabled = true;
-            this.cb_coinType.Location = new System.Drawing.Point(122, 30);
+            this.cb_coinType.Location = new System.Drawing.Point(122, 25);
             this.cb_coinType.Name = "cb_coinType";
             this.cb_coinType.Size = new System.Drawing.Size(169, 29);
             this.cb_coinType.TabIndex = 33;
@@ -990,7 +994,7 @@
             // 
             // tz_L_Max
             // 
-            this.tz_L_Max.Location = new System.Drawing.Point(233, 85);
+            this.tz_L_Max.Location = new System.Drawing.Point(233, 80);
             this.tz_L_Max.Name = "tz_L_Max";
             this.tz_L_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_L_Max.TabIndex = 32;
@@ -999,7 +1003,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(87, 62);
+            this.label29.Location = new System.Drawing.Point(87, 57);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(21, 21);
             this.label29.TabIndex = 30;
@@ -1007,7 +1011,7 @@
             // 
             // tz_M_Min
             // 
-            this.tz_M_Min.Location = new System.Drawing.Point(151, 122);
+            this.tz_M_Min.Location = new System.Drawing.Point(151, 117);
             this.tz_M_Min.Name = "tz_M_Min";
             this.tz_M_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_M_Min.TabIndex = 29;
@@ -1015,7 +1019,7 @@
             // 
             // tz_L_Min
             // 
-            this.tz_L_Min.Location = new System.Drawing.Point(233, 122);
+            this.tz_L_Min.Location = new System.Drawing.Point(233, 117);
             this.tz_L_Min.Name = "tz_L_Min";
             this.tz_L_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_L_Min.TabIndex = 28;
@@ -1024,7 +1028,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(251, 62);
+            this.label30.Location = new System.Drawing.Point(251, 57);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(21, 21);
             this.label30.TabIndex = 27;
@@ -1032,7 +1036,7 @@
             // 
             // tz_M_Max
             // 
-            this.tz_M_Max.Location = new System.Drawing.Point(151, 85);
+            this.tz_M_Max.Location = new System.Drawing.Point(151, 80);
             this.tz_M_Max.Name = "tz_M_Max";
             this.tz_M_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_M_Max.TabIndex = 26;
@@ -1041,7 +1045,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(170, 61);
+            this.label31.Location = new System.Drawing.Point(170, 56);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(21, 21);
             this.label31.TabIndex = 26;
@@ -1049,7 +1053,7 @@
             // 
             // tz_H_Min
             // 
-            this.tz_H_Min.Location = new System.Drawing.Point(69, 122);
+            this.tz_H_Min.Location = new System.Drawing.Point(69, 117);
             this.tz_H_Min.Name = "tz_H_Min";
             this.tz_H_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_H_Min.TabIndex = 23;
@@ -1057,7 +1061,7 @@
             // 
             // tz_H_Max
             // 
-            this.tz_H_Max.Location = new System.Drawing.Point(69, 86);
+            this.tz_H_Max.Location = new System.Drawing.Point(69, 81);
             this.tz_H_Max.Name = "tz_H_Max";
             this.tz_H_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_H_Max.TabIndex = 22;
@@ -1066,7 +1070,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(21, 126);
+            this.label34.Location = new System.Drawing.Point(21, 121);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(43, 21);
             this.label34.TabIndex = 21;
@@ -1075,7 +1079,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(21, 93);
+            this.label35.Location = new System.Drawing.Point(21, 88);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(43, 21);
             this.label35.TabIndex = 20;
@@ -1345,6 +1349,25 @@
             this.label45.TabIndex = 20;
             this.label45.Text = "踢币延时";
             // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(22, 161);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(136, 21);
+            this.label46.TabIndex = 35;
+            this.label46.Text = "拒收此类硬币";
+            // 
+            // inhibitCoin_check
+            // 
+            this.inhibitCoin_check.AutoSize = true;
+            this.inhibitCoin_check.Location = new System.Drawing.Point(162, 165);
+            this.inhibitCoin_check.Name = "inhibitCoin_check";
+            this.inhibitCoin_check.Size = new System.Drawing.Size(15, 14);
+            this.inhibitCoin_check.TabIndex = 45;
+            this.inhibitCoin_check.UseVisualStyleBackColor = true;
+            this.inhibitCoin_check.CheckedChanged += new System.EventHandler(this.inhibitCoin_check_CheckedChanged);
+            // 
             // CoinOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1522,6 +1545,8 @@
         private System.Windows.Forms.TextBox kick3_delay;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.CheckBox inhibitCoin_check;
+        private System.Windows.Forms.Label label46;
 
     }
 }

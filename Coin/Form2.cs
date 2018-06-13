@@ -262,6 +262,16 @@ namespace Coin
                 case 63:
                     kick3_keep.Text = str;
                     break;
+                case 64:
+                    if (str == "1")
+                    {
+                        inhibitCoin_check.Checked = true;
+                    }
+                    else
+                    {
+                        inhibitCoin_check.Checked = false;
+                    }
+                    break;
                 default:
                     break;
             }
@@ -819,6 +829,18 @@ namespace Coin
                 }
             }
 
+        }
+
+        private void inhibitCoin_check_CheckedChanged(object sender, EventArgs e)
+        {
+            if (inhibitCoin_check.Checked == true)
+            {
+                parentFrm.send_value("64", "1");//拒收
+            }
+            else
+            {
+                parentFrm.send_value("64", "0");
+            }
         }
 
 
