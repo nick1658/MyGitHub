@@ -781,7 +781,7 @@ namespace Coin
         private void exportRecord_Click(object sender, EventArgs e)
         {
             send_str("version\r");
-            Thread.Sleep(100);
+            Thread.Sleep(200);
             exportRecord.Enabled = false;
             set_send_state(3);
             send_cmd_code("0007");//导出数据

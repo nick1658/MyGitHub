@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -717,6 +718,8 @@ namespace Coin
         private void exportRecord_Click(object sender, EventArgs e)
         {
             isHistoryRecord = 0;
+            parentFrm.send_str("version\r");
+            Thread.Sleep(200);
             saveRecord.Enabled = false;
             exportRecord.Enabled = false;
             parentFrm.set_send_state(3);
@@ -726,6 +729,8 @@ namespace Coin
         private void saveRecord_Click(object sender, EventArgs e)
         {
             isHistoryRecord = 1;
+            parentFrm.send_str("version\r");
+            Thread.Sleep(200);
             saveRecord.Enabled = false;
             exportRecord.Enabled = false;
             parentFrm.set_send_state(3);
