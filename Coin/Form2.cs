@@ -57,6 +57,44 @@ namespace Coin
             parentFrm.send_cmd_code("E001");//清除报警
         }
 
+        private void 特征学习启动_Click(object sender, EventArgs e)
+        {
+            if (特征学习启动.Text == "启动")
+            {
+                parentFrm.send_cmd_code("0009");//特征学习启动
+                start_poll();
+                特征学习启动.Text = "停止";
+                取消保存.Enabled = false;
+            }
+            else if(特征学习启动.Text == "停止")
+            {
+                parentFrm.send_cmd_code("000A");//特征学习停止
+                特征学习启动.Text = "保存";
+                取消保存.Enabled = true;
+            }
+            else if(特征学习启动.Text == "保存")
+            {
+                DialogResult dr= MessageBox.Show("确定保存此次学习的特征值？","保存特征值", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
+                {//点确定的代码
+                    parentFrm.send_cmd_code("000B");//特征学习保存
+                }
+                else
+                { //点取消的代码 
+                    parentFrm.send_cmd_code("000C");//特征学习取消保存
+                } 
+                取消保存.Enabled = false;
+                特征学习启动.Text = "启动";
+            }
+        }
+
+        private void 取消保存_Click(object sender, EventArgs e)
+        {
+            取消保存.Enabled = false;
+            特征学习启动.Text = "启动";
+            parentFrm.send_cmd_code("000C");//特征学习取消保存
+        }
+
         private void CoinOP_Load(object sender, EventArgs e)
         {
             kick0_delay.Text = "0";
@@ -271,6 +309,9 @@ namespace Coin
                     {
                         inhibitCoin_check.Checked = false;
                     }
+                    break;
+                case 65:
+                    textBox_Tips.Text = str;
                     break;
                 default:
                     break;
@@ -842,6 +883,7 @@ namespace Coin
                 parentFrm.send_value("64", "0");
             }
         }
+
 
 
     }
