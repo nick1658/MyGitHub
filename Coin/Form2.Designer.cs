@@ -72,7 +72,13 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.yz_dao1jiao = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.yz_1fen = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.yz_2fen = new System.Windows.Forms.TextBox();
+            this.yz_5fen = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -92,6 +98,8 @@
             this.idle_time = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.coin_mode_button = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.取消保存 = new System.Windows.Forms.Button();
             this.特征学习启动 = new System.Windows.Forms.Button();
@@ -114,8 +122,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.cpuUsage = new System.Windows.Forms.Label();
-            this.coin_mode_button = new System.Windows.Forms.Button();
-            this.label38 = new System.Windows.Forms.Label();
             this.exportRecord = new System.Windows.Forms.Button();
             this.saveRecord = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -138,12 +144,6 @@
             this.label45 = new System.Windows.Forms.Label();
             this.textBox_Tips = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.yz_5fen = new System.Windows.Forms.TextBox();
-            this.yz_2fen = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.yz_1fen = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -583,6 +583,14 @@
             this.label10.TabIndex = 34;
             this.label10.Text = "大1角";
             // 
+            // yz_1fen
+            // 
+            this.yz_1fen.Location = new System.Drawing.Point(215, 99);
+            this.yz_1fen.Name = "yz_1fen";
+            this.yz_1fen.Size = new System.Drawing.Size(86, 31);
+            this.yz_1fen.TabIndex = 32;
+            this.yz_1fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_1fen_KeyPress);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -591,6 +599,49 @@
             this.label21.Size = new System.Drawing.Size(105, 21);
             this.label21.TabIndex = 31;
             this.label21.Text = "纪念币5元";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(161, 102);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(42, 21);
+            this.label22.TabIndex = 30;
+            this.label22.Text = "1分";
+            // 
+            // yz_2fen
+            // 
+            this.yz_2fen.Location = new System.Drawing.Point(215, 65);
+            this.yz_2fen.Name = "yz_2fen";
+            this.yz_2fen.Size = new System.Drawing.Size(86, 31);
+            this.yz_2fen.TabIndex = 29;
+            this.yz_2fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_2fen_KeyPress);
+            // 
+            // yz_5fen
+            // 
+            this.yz_5fen.Location = new System.Drawing.Point(215, 31);
+            this.yz_5fen.Name = "yz_5fen";
+            this.yz_5fen.Size = new System.Drawing.Size(86, 31);
+            this.yz_5fen.TabIndex = 28;
+            this.yz_5fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_5fen_KeyPress);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(161, 68);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(42, 21);
+            this.label23.TabIndex = 27;
+            this.label23.Text = "2分";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(161, 34);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(42, 21);
+            this.label24.TabIndex = 26;
+            this.label24.Text = "5分";
             // 
             // label25
             // 
@@ -635,7 +686,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(15, 144);
+            this.groupBox2.Location = new System.Drawing.Point(15, 143);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(183, 95);
             this.groupBox2.TabIndex = 24;
@@ -786,6 +837,31 @@
             this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 20;
             this.label7.Text = "空转时间";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("宋体", 15.75F);
+            this.label38.Location = new System.Drawing.Point(51, 200);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(94, 21);
+            this.label38.TabIndex = 45;
+            this.label38.Text = "清分模式";
+            // 
+            // coin_mode_button
+            // 
+            this.coin_mode_button.BackColor = System.Drawing.SystemColors.Control;
+            this.coin_mode_button.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.coin_mode_button.FlatAppearance.BorderSize = 0;
+            this.coin_mode_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.coin_mode_button.ForeColor = System.Drawing.Color.Transparent;
+            this.coin_mode_button.Image = global::Coin.Properties.Resources._0_switch_off;
+            this.coin_mode_button.Location = new System.Drawing.Point(36, 228);
+            this.coin_mode_button.Name = "coin_mode_button";
+            this.coin_mode_button.Size = new System.Drawing.Size(132, 45);
+            this.coin_mode_button.TabIndex = 45;
+            this.coin_mode_button.UseVisualStyleBackColor = false;
+            this.coin_mode_button.Click += new System.EventHandler(this.coin_mode_Click);
             // 
             // groupBox7
             // 
@@ -1007,31 +1083,6 @@
             this.cpuUsage.Text = "99";
             this.cpuUsage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // coin_mode_button
-            // 
-            this.coin_mode_button.BackColor = System.Drawing.SystemColors.Control;
-            this.coin_mode_button.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.coin_mode_button.FlatAppearance.BorderSize = 0;
-            this.coin_mode_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.coin_mode_button.ForeColor = System.Drawing.Color.Transparent;
-            this.coin_mode_button.Image = global::Coin.Properties.Resources._0_switch_off;
-            this.coin_mode_button.Location = new System.Drawing.Point(36, 228);
-            this.coin_mode_button.Name = "coin_mode_button";
-            this.coin_mode_button.Size = new System.Drawing.Size(132, 45);
-            this.coin_mode_button.TabIndex = 45;
-            this.coin_mode_button.UseVisualStyleBackColor = false;
-            this.coin_mode_button.Click += new System.EventHandler(this.coin_mode_Click);
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("宋体", 15.75F);
-            this.label38.Location = new System.Drawing.Point(51, 200);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(94, 21);
-            this.label38.TabIndex = 45;
-            this.label38.Text = "清分模式";
-            // 
             // exportRecord
             // 
             this.exportRecord.BackColor = System.Drawing.SystemColors.Control;
@@ -1143,7 +1194,7 @@
             this.groupBox9.Controls.Add(this.label42);
             this.groupBox9.Controls.Add(this.label43);
             this.groupBox9.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox9.Location = new System.Drawing.Point(15, 245);
+            this.groupBox9.Location = new System.Drawing.Point(15, 244);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(183, 95);
             this.groupBox9.TabIndex = 25;
@@ -1191,7 +1242,7 @@
             this.groupBox10.Controls.Add(this.label44);
             this.groupBox10.Controls.Add(this.label45);
             this.groupBox10.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox10.Location = new System.Drawing.Point(12, 363);
+            this.groupBox10.Location = new System.Drawing.Point(15, 344);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(183, 95);
             this.groupBox10.TabIndex = 49;
@@ -1250,57 +1301,6 @@
             this.label47.Size = new System.Drawing.Size(89, 19);
             this.label47.TabIndex = 41;
             this.label47.Text = "提示信息";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(161, 34);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(42, 21);
-            this.label24.TabIndex = 26;
-            this.label24.Text = "5分";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(161, 68);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(42, 21);
-            this.label23.TabIndex = 27;
-            this.label23.Text = "2分";
-            // 
-            // yz_5fen
-            // 
-            this.yz_5fen.Location = new System.Drawing.Point(215, 31);
-            this.yz_5fen.Name = "yz_5fen";
-            this.yz_5fen.Size = new System.Drawing.Size(86, 31);
-            this.yz_5fen.TabIndex = 28;
-            this.yz_5fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_5fen_KeyPress);
-            // 
-            // yz_2fen
-            // 
-            this.yz_2fen.Location = new System.Drawing.Point(215, 65);
-            this.yz_2fen.Name = "yz_2fen";
-            this.yz_2fen.Size = new System.Drawing.Size(86, 31);
-            this.yz_2fen.TabIndex = 29;
-            this.yz_2fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_2fen_KeyPress);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(161, 102);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(42, 21);
-            this.label22.TabIndex = 30;
-            this.label22.Text = "1分";
-            // 
-            // yz_1fen
-            // 
-            this.yz_1fen.Location = new System.Drawing.Point(215, 99);
-            this.yz_1fen.Name = "yz_1fen";
-            this.yz_1fen.Size = new System.Drawing.Size(86, 31);
-            this.yz_1fen.TabIndex = 32;
-            this.yz_1fen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yz_1fen_KeyPress);
             // 
             // CoinOP
             // 
