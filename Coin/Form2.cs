@@ -30,7 +30,7 @@ namespace Coin
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            parentFrm.send_cmd_code("0005");//启动
+            parentFrm.send_cmd_code("0005");//清零
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -68,6 +68,7 @@ namespace Coin
             }
             else if(特征学习启动.Text == "停止")
             {
+                stop_poll();
                 parentFrm.send_cmd_code("000A");//特征学习停止
                 特征学习启动.Text = "保存";
                 取消保存.Enabled = true;
@@ -326,7 +327,7 @@ namespace Coin
             for (int i = 0; i < str.Length; i++)
             {
                 c = str[i];
-                if (c == ',')
+                if (c == '$')
                 {
                     try
                     {
@@ -802,6 +803,8 @@ namespace Coin
             {
                 hopper_1jiao.Text = "1";
             }
+
+            textBox_Tips.Text = "";
             parentFrm.send_hopper_value("80", hopper_1yuan.Text, hopper_5jiao.Text, hopper_1jiao.Text);
         }
 
@@ -882,6 +885,51 @@ namespace Coin
             {
                 parentFrm.send_value("64", "0");
             }
+        }
+
+        private void button_Kick1_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0010");//
+        }
+
+        private void button_kick2_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0011");//
+        }
+
+        private void button_kick3_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0012");//
+        }
+
+        private void button_kick4_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0013");//
+        }
+
+        private void pan_motor_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0014");//
+        }
+
+        private void belt_motor_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0015");//
+        }
+
+        private void hopper_status_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0016");//
+        }
+
+        private void empty_hopper_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0017");//
+        }
+
+        private void reset_hopper_Click(object sender, EventArgs e)
+        {
+            parentFrm.send_cmd_code("0018");//
         }
 
 

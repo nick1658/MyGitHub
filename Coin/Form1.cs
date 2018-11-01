@@ -73,6 +73,8 @@ namespace Coin
             save_timer = new System.Timers.Timer(3000);
             save_timer.Elapsed += save_handler;//到达时间的时候执行事件；
             save_timer.AutoReset = false;//设置是执行一次（false）还是一直执行(true)；
+            filePath.Text = MyApp.Default.bin_path;
+            fileName = filePath.Text;
             if (MyApp.Default.download_mode == 0)
             {
                 radioSerial.Checked = true;
@@ -702,6 +704,7 @@ namespace Coin
             {
                 MyApp.Default.download_mode = 0;
             }
+            MyApp.Default.bin_path = filePath.Text;
             MyApp.Default.Save();
             
             Thread.Sleep(100);

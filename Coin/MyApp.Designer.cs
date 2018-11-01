@@ -34,5 +34,17 @@ namespace Coin {
                 this["download_mode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string bin_path {
+            get {
+                return ((string)(this["bin_path"]));
+            }
+            set {
+                this["bin_path"] = value;
+            }
+        }
     }
 }
