@@ -31,7 +31,7 @@ namespace Coin
         List<byte> buffer = new List<byte>(4096);
         List<byte> record_buffer = new List<byte>(516*1024);
         List<string> send_buff = new List<string>(32);
-        SerialPort s = new SerialPort();    //实例化一个串口对象，在前端控件中可以直接拖过来，但最好是在后端代码中写代码，这样复制到其他地方不会出错。s是一个串口的句柄  
+        SerialPort serialPart = new SerialPort();    //实例化一个串口对象，在前端控件中可以直接拖过来，但最好是在后端代码中写代码，这样复制到其他地方不会出错。s是一个串口的句柄  
 
         public void set_send_state(int state)
         {
@@ -127,14 +127,14 @@ namespace Coin
         {
             try
             {
-                if (!s.IsOpen)
+                if (!serialPart.IsOpen)
                 {
                     if (comboBox1.Items.Count > 0)
                     {
-                        s.PortName = comboBox1.SelectedItem.ToString();
-                        s.BaudRate = Convert.ToInt32(comboBox2.SelectedItem.ToString());
-                        s.Open();
-                        s.DataReceived += s_DataReceived;
+                        serialPart.PortName = comboBox1.SelectedItem.ToString();
+                        serialPart.BaudRate = Convert.ToInt32(comboBox2.SelectedItem.ToString());
+                        serialPart.Open();
+                        serialPart.DataReceived += s_DataReceived;
                         打开串口.Text = "关闭串口";
                         //MessageBox.Show("串口已打开");  
                     }
@@ -146,8 +146,8 @@ namespace Coin
                 }
                 else
                 {
-                    s.Close();
-                    s.DataReceived -= s_DataReceived;
+                    serialPart.Close();
+                    serialPart.DataReceived -= s_DataReceived;
                     打开串口.Text = "打开串口";
                 }
                 return true;
@@ -164,10 +164,11 @@ namespace Coin
         }
         void s_DataReceived(object sender, SerialDataReceivedEventArgs e)   //数据接收事件，
         {
-            int count = s.BytesToRead;
+            //Thread.Sleep(200); //等待100毫秒
+            int count = serialPart.BytesToRead;
             byte[] buff = new byte[count];
             string respond_str = null;
-            s.Read(buff, 0, count);
+            serialPart.Read(buff, 0, count);
             //1.缓存数据
             if (send_state == 3)//导出记录
             {
@@ -283,14 +284,14 @@ namespace Coin
          /// <param name="data"></param>
          public bool SendData(byte[] data)
          {
-             if (!s.IsOpen)
+             if (!serialPart.IsOpen)
              {
                  if (!open_com())
                      return false;
              }
              try
              {
-                 s.Write(data, 0, data.Length);//发送数据
+                 serialPart.Write(data, 0, data.Length);//发送数据
                  return true;
              }
              catch (Exception ex)
@@ -785,6 +786,20 @@ namespace Coin
             exportRecord.Enabled = false;
             set_send_state(3);
             send_cmd_code("0007");//导出数据
+        }
+
+        private void tz_jianshi_Click(object sender, EventArgs e)
+        {
+            if(tz_jianshi.Text == "基准值监视")
+            {
+                tz_jianshi.Text = "停止监视";
+                send_str("go jzts\r");
+            }
+            else if (tz_jianshi.Text == "停止监视")
+            {
+                tz_jianshi.Text = "基准值监视";
+                send_str("go jsjm\r");
+            }
         }
     }
 }

@@ -44,6 +44,7 @@
             this.filePath = new System.Windows.Forms.TextBox();
             this.TFTPServer = new System.Windows.Forms.Label();
             this.exportRecord = new System.Windows.Forms.Button();
+            this.tz_jianshi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // 打开串口
@@ -89,7 +90,7 @@
             // 
             this.打开文件.BackColor = System.Drawing.SystemColors.Control;
             this.打开文件.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.打开文件.Location = new System.Drawing.Point(1, 193);
+            this.打开文件.Location = new System.Drawing.Point(1, 217);
             this.打开文件.Name = "打开文件";
             this.打开文件.Size = new System.Drawing.Size(156, 81);
             this.打开文件.TabIndex = 10;
@@ -101,7 +102,7 @@
             // 
             this.下载.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.下载.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.下载.Location = new System.Drawing.Point(1, 277);
+            this.下载.Location = new System.Drawing.Point(1, 297);
             this.下载.Name = "下载";
             this.下载.Size = new System.Drawing.Size(156, 81);
             this.下载.TabIndex = 11;
@@ -123,7 +124,7 @@
             // 
             this.重启.BackColor = System.Drawing.SystemColors.Control;
             this.重启.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.重启.Location = new System.Drawing.Point(1, 361);
+            this.重启.Location = new System.Drawing.Point(1, 377);
             this.重启.Name = "重启";
             this.重启.Size = new System.Drawing.Size(156, 81);
             this.重启.TabIndex = 15;
@@ -135,7 +136,7 @@
             // 
             this.更多操作.BackColor = System.Drawing.SystemColors.Control;
             this.更多操作.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.更多操作.Location = new System.Drawing.Point(1, 445);
+            this.更多操作.Location = new System.Drawing.Point(1, 457);
             this.更多操作.Name = "更多操作";
             this.更多操作.Size = new System.Drawing.Size(156, 81);
             this.更多操作.TabIndex = 16;
@@ -201,12 +202,25 @@
             this.exportRecord.UseVisualStyleBackColor = true;
             this.exportRecord.Click += new System.EventHandler(this.exportRecord_Click);
             // 
+            // tz_jianshi
+            // 
+            this.tz_jianshi.BackColor = System.Drawing.SystemColors.Control;
+            this.tz_jianshi.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tz_jianshi.Location = new System.Drawing.Point(1, 137);
+            this.tz_jianshi.Name = "tz_jianshi";
+            this.tz_jianshi.Size = new System.Drawing.Size(156, 81);
+            this.tz_jianshi.TabIndex = 49;
+            this.tz_jianshi.Text = "基准值监视";
+            this.tz_jianshi.UseVisualStyleBackColor = true;
+            this.tz_jianshi.Click += new System.EventHandler(this.tz_jianshi_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(942, 539);
+            this.Controls.Add(this.tz_jianshi);
             this.Controls.Add(this.exportRecord);
             this.Controls.Add(this.TFTPServer);
             this.Controls.Add(this.filePath);
@@ -252,6 +266,7 @@
         private System.Windows.Forms.TextBox filePath;
         private System.Windows.Forms.Label TFTPServer;
         private System.Windows.Forms.Button exportRecord;
+        private System.Windows.Forms.Button tz_jianshi;
     }
 }
 
