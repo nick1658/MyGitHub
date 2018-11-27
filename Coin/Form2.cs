@@ -125,6 +125,8 @@ namespace Coin
             full_rej_pos.Text = "0";
             full_stop_num.Text = "0";
             system_boot_delay.Text = "0";
+            Vpp.Text = "0";
+            Sub_V.Text = "0";
             hopper_1yuan.Text = "1";
             hopper_5jiao.Text = "1";
             hopper_1jiao.Text = "1";
@@ -930,6 +932,30 @@ namespace Coin
         private void reset_hopper_Click(object sender, EventArgs e)
         {
             parentFrm.send_cmd_code("0018");//
+        }
+
+        private void Vpp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("65", Vpp.Text);
+                }
+            }
+        }
+
+        private void Sub_V_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("66", Sub_V.Text);
+                }
+            }
         }
 
 

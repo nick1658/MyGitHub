@@ -1,0 +1,9 @@
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\VSProjects\MyGitHub\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

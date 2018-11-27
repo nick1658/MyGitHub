@@ -131,6 +131,7 @@
             this.exportRecord = new System.Windows.Forms.Button();
             this.saveRecord = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.hopper_status = new System.Windows.Forms.Button();
             this.reset_hopper = new System.Windows.Forms.Button();
             this.empty_hopper = new System.Windows.Forms.Button();
             this.label39 = new System.Windows.Forms.Label();
@@ -152,7 +153,10 @@
             this.label45 = new System.Windows.Forms.Label();
             this.textBox_Tips = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.hopper_status = new System.Windows.Forms.Button();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.Vpp = new System.Windows.Forms.TextBox();
+            this.Sub_V = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -970,9 +974,9 @@
             this.groupBox7.Controls.Add(this.label34);
             this.groupBox7.Controls.Add(this.label35);
             this.groupBox7.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox7.Location = new System.Drawing.Point(401, 41);
+            this.groupBox7.Location = new System.Drawing.Point(401, 83);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(467, 214);
+            this.groupBox7.Size = new System.Drawing.Size(467, 172);
             this.groupBox7.TabIndex = 36;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "特征值学习及编辑";
@@ -981,7 +985,7 @@
             // 
             this.取消保存.BackColor = System.Drawing.SystemColors.Control;
             this.取消保存.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.取消保存.Location = new System.Drawing.Point(357, 156);
+            this.取消保存.Location = new System.Drawing.Point(357, 115);
             this.取消保存.Name = "取消保存";
             this.取消保存.Size = new System.Drawing.Size(88, 48);
             this.取消保存.TabIndex = 46;
@@ -993,7 +997,7 @@
             // 
             this.特征学习启动.BackColor = System.Drawing.SystemColors.Control;
             this.特征学习启动.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.特征学习启动.Location = new System.Drawing.Point(357, 102);
+            this.特征学习启动.Location = new System.Drawing.Point(357, 61);
             this.特征学习启动.Name = "特征学习启动";
             this.特征学习启动.Size = new System.Drawing.Size(88, 48);
             this.特征学习启动.TabIndex = 38;
@@ -1004,7 +1008,7 @@
             // inhibitCoin_check
             // 
             this.inhibitCoin_check.AutoSize = true;
-            this.inhibitCoin_check.Location = new System.Drawing.Point(151, 49);
+            this.inhibitCoin_check.Location = new System.Drawing.Point(151, 42);
             this.inhibitCoin_check.Name = "inhibitCoin_check";
             this.inhibitCoin_check.Size = new System.Drawing.Size(15, 14);
             this.inhibitCoin_check.TabIndex = 45;
@@ -1014,7 +1018,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(11, 45);
+            this.label46.Location = new System.Drawing.Point(11, 38);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(136, 21);
             this.label46.TabIndex = 35;
@@ -1023,7 +1027,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(342, 24);
+            this.label11.Location = new System.Drawing.Point(217, 29);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 21);
             this.label11.TabIndex = 34;
@@ -1032,7 +1036,7 @@
             // cb_coinType
             // 
             this.cb_coinType.FormattingEnabled = true;
-            this.cb_coinType.Location = new System.Drawing.Point(317, 50);
+            this.cb_coinType.Location = new System.Drawing.Point(317, 26);
             this.cb_coinType.Name = "cb_coinType";
             this.cb_coinType.Size = new System.Drawing.Size(143, 29);
             this.cb_coinType.TabIndex = 33;
@@ -1040,7 +1044,7 @@
             // 
             // tz_L_Max
             // 
-            this.tz_L_Max.Location = new System.Drawing.Point(248, 105);
+            this.tz_L_Max.Location = new System.Drawing.Point(248, 84);
             this.tz_L_Max.Name = "tz_L_Max";
             this.tz_L_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_L_Max.TabIndex = 32;
@@ -1049,7 +1053,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(65, 82);
+            this.label29.Location = new System.Drawing.Point(65, 61);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(21, 21);
             this.label29.TabIndex = 30;
@@ -1057,7 +1061,7 @@
             // 
             // tz_M_Min
             // 
-            this.tz_M_Min.Location = new System.Drawing.Point(147, 153);
+            this.tz_M_Min.Location = new System.Drawing.Point(147, 132);
             this.tz_M_Min.Name = "tz_M_Min";
             this.tz_M_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_M_Min.TabIndex = 29;
@@ -1065,7 +1069,7 @@
             // 
             // tz_L_Min
             // 
-            this.tz_L_Min.Location = new System.Drawing.Point(248, 153);
+            this.tz_L_Min.Location = new System.Drawing.Point(248, 132);
             this.tz_L_Min.Name = "tz_L_Min";
             this.tz_L_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_L_Min.TabIndex = 28;
@@ -1074,7 +1078,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(266, 82);
+            this.label30.Location = new System.Drawing.Point(266, 61);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(21, 21);
             this.label30.TabIndex = 27;
@@ -1082,7 +1086,7 @@
             // 
             // tz_M_Max
             // 
-            this.tz_M_Max.Location = new System.Drawing.Point(147, 105);
+            this.tz_M_Max.Location = new System.Drawing.Point(147, 84);
             this.tz_M_Max.Name = "tz_M_Max";
             this.tz_M_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_M_Max.TabIndex = 26;
@@ -1091,7 +1095,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(165, 81);
+            this.label31.Location = new System.Drawing.Point(165, 60);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(21, 21);
             this.label31.TabIndex = 26;
@@ -1099,7 +1103,7 @@
             // 
             // tz_H_Min
             // 
-            this.tz_H_Min.Location = new System.Drawing.Point(47, 153);
+            this.tz_H_Min.Location = new System.Drawing.Point(47, 132);
             this.tz_H_Min.Name = "tz_H_Min";
             this.tz_H_Min.Size = new System.Drawing.Size(58, 31);
             this.tz_H_Min.TabIndex = 23;
@@ -1107,7 +1111,7 @@
             // 
             // tz_H_Max
             // 
-            this.tz_H_Max.Location = new System.Drawing.Point(47, 106);
+            this.tz_H_Max.Location = new System.Drawing.Point(47, 85);
             this.tz_H_Max.Name = "tz_H_Max";
             this.tz_H_Max.Size = new System.Drawing.Size(58, 31);
             this.tz_H_Max.TabIndex = 22;
@@ -1116,7 +1120,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 157);
+            this.label34.Location = new System.Drawing.Point(6, 136);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(43, 21);
             this.label34.TabIndex = 21;
@@ -1125,7 +1129,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 113);
+            this.label35.Location = new System.Drawing.Point(6, 92);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(43, 21);
             this.label35.TabIndex = 20;
@@ -1213,6 +1217,18 @@
             this.groupBox8.TabIndex = 48;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Hopper 测试";
+            // 
+            // hopper_status
+            // 
+            this.hopper_status.BackColor = System.Drawing.SystemColors.Control;
+            this.hopper_status.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.hopper_status.Location = new System.Drawing.Point(6, 152);
+            this.hopper_status.Name = "hopper_status";
+            this.hopper_status.Size = new System.Drawing.Size(94, 35);
+            this.hopper_status.TabIndex = 50;
+            this.hopper_status.Text = "状态";
+            this.hopper_status.UseVisualStyleBackColor = true;
+            this.hopper_status.Click += new System.EventHandler(this.hopper_status_Click);
             // 
             // reset_hopper
             // 
@@ -1416,17 +1432,43 @@
             this.label47.TabIndex = 41;
             this.label47.Text = "提示信息";
             // 
-            // hopper_status
+            // label48
             // 
-            this.hopper_status.BackColor = System.Drawing.SystemColors.Control;
-            this.hopper_status.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hopper_status.Location = new System.Drawing.Point(6, 152);
-            this.hopper_status.Name = "hopper_status";
-            this.hopper_status.Size = new System.Drawing.Size(94, 35);
-            this.hopper_status.TabIndex = 50;
-            this.hopper_status.Text = "状态";
-            this.hopper_status.UseVisualStyleBackColor = true;
-            this.hopper_status.Click += new System.EventHandler(this.hopper_status_Click);
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label48.Location = new System.Drawing.Point(613, 45);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(94, 21);
+            this.label48.TabIndex = 42;
+            this.label48.Text = "减法系数";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label49.Location = new System.Drawing.Point(412, 44);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(73, 21);
+            this.label49.TabIndex = 41;
+            this.label49.Text = "平均值";
+            // 
+            // Vpp
+            // 
+            this.Vpp.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Vpp.Location = new System.Drawing.Point(487, 41);
+            this.Vpp.Name = "Vpp";
+            this.Vpp.Size = new System.Drawing.Size(80, 31);
+            this.Vpp.TabIndex = 50;
+            this.Vpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Vpp_KeyPress);
+            // 
+            // Sub_V
+            // 
+            this.Sub_V.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Sub_V.Location = new System.Drawing.Point(713, 41);
+            this.Sub_V.Name = "Sub_V";
+            this.Sub_V.Size = new System.Drawing.Size(80, 31);
+            this.Sub_V.TabIndex = 51;
+            this.Sub_V.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Sub_V_KeyPress);
             // 
             // CoinOP
             // 
@@ -1434,8 +1476,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1224, 581);
+            this.Controls.Add(this.Sub_V);
+            this.Controls.Add(this.Vpp);
             this.Controls.Add(this.textBox_Tips);
+            this.Controls.Add(this.label48);
             this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.label49);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
@@ -1611,6 +1657,10 @@
         private System.Windows.Forms.Button reset_hopper;
         private System.Windows.Forms.Button empty_hopper;
         private System.Windows.Forms.Button hopper_status;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox Vpp;
+        private System.Windows.Forms.TextBox Sub_V;
 
     }
 }
