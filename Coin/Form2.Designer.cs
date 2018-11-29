@@ -365,9 +365,9 @@
             // 
             this.清除报警.BackColor = System.Drawing.SystemColors.Control;
             this.清除报警.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.清除报警.Location = new System.Drawing.Point(506, 498);
+            this.清除报警.Location = new System.Drawing.Point(509, 500);
             this.清除报警.Name = "清除报警";
-            this.清除报警.Size = new System.Drawing.Size(144, 50);
+            this.清除报警.Size = new System.Drawing.Size(144, 32);
             this.清除报警.TabIndex = 19;
             this.清除报警.Text = "清除报警";
             this.清除报警.UseVisualStyleBackColor = true;
@@ -567,9 +567,9 @@
             // 
             this.同步数据.BackColor = System.Drawing.SystemColors.Control;
             this.同步数据.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.同步数据.Location = new System.Drawing.Point(654, 498);
+            this.同步数据.Location = new System.Drawing.Point(656, 500);
             this.同步数据.Name = "同步数据";
-            this.同步数据.Size = new System.Drawing.Size(143, 50);
+            this.同步数据.Size = new System.Drawing.Size(143, 32);
             this.同步数据.TabIndex = 37;
             this.同步数据.Text = "同步数据";
             this.同步数据.UseVisualStyleBackColor = true;
@@ -936,7 +936,7 @@
             // 
             this.返回下载.BackColor = System.Drawing.SystemColors.Control;
             this.返回下载.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.返回下载.Location = new System.Drawing.Point(5, 491);
+            this.返回下载.Location = new System.Drawing.Point(5, 471);
             this.返回下载.Name = "返回下载";
             this.返回下载.Size = new System.Drawing.Size(156, 65);
             this.返回下载.TabIndex = 35;
@@ -1305,7 +1305,7 @@
             // poll_data_ckeck
             // 
             this.poll_data_ckeck.AutoSize = true;
-            this.poll_data_ckeck.Location = new System.Drawing.Point(255, 542);
+            this.poll_data_ckeck.Location = new System.Drawing.Point(255, 520);
             this.poll_data_ckeck.Name = "poll_data_ckeck";
             this.poll_data_ckeck.Size = new System.Drawing.Size(78, 16);
             this.poll_data_ckeck.TabIndex = 38;
@@ -1316,7 +1316,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(229, 543);
+            this.label36.Location = new System.Drawing.Point(229, 521);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(11, 12);
             this.label36.TabIndex = 39;
@@ -1325,7 +1325,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(189, 543);
+            this.label37.Location = new System.Drawing.Point(189, 521);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(29, 12);
             this.label37.TabIndex = 40;
@@ -1334,7 +1334,7 @@
             // cpuUsage
             // 
             this.cpuUsage.AutoSize = true;
-            this.cpuUsage.Location = new System.Drawing.Point(214, 543);
+            this.cpuUsage.Location = new System.Drawing.Point(214, 521);
             this.cpuUsage.Name = "cpuUsage";
             this.cpuUsage.Size = new System.Drawing.Size(17, 12);
             this.cpuUsage.TabIndex = 41;
@@ -1607,7 +1607,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(942, 560);
+            this.ClientSize = new System.Drawing.Size(942, 539);
             this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.textBox_Tips);
             this.Controls.Add(this.groupBox10);
