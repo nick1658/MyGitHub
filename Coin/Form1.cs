@@ -125,7 +125,7 @@ namespace Coin
             set_send_state(0);
         }
 
-        private bool open_com ()
+        public bool open_com ()
         {
             try
             {

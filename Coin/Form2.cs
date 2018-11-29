@@ -102,6 +102,10 @@ namespace Coin
             kick0_keep.Text = "0";
             kick1_keep.Text = "0";
             kick1_delay.Text = "0";
+            kick2_keep.Text = "0";
+            kick2_delay.Text = "0";
+            kick3_keep.Text = "0";
+            kick3_delay.Text = "0";
             yz_1yuan.Text = "0";
             yz_5jiao.Text = "0";
             yz_1jiao.Text = "0";
@@ -125,8 +129,12 @@ namespace Coin
             full_rej_pos.Text = "0";
             full_stop_num.Text = "0";
             system_boot_delay.Text = "0";
-            Vpp.Text = "0";
-            Sub_V.Text = "0";
+            Vpp0.Text = "0";
+            Sub_V0.Text = "0";
+            Vpp1.Text = "0";
+            Sub_V1.Text = "0";
+            Vpp2.Text = "0";
+            Sub_V2.Text = "0";
             hopper_1yuan.Text = "1";
             hopper_5jiao.Text = "1";
             hopper_1jiao.Text = "1";
@@ -315,6 +323,24 @@ namespace Coin
                     break;
                 case 65:
                     textBox_Tips.Text = str;
+                    break;
+                case 80:
+                    Vpp0.Text = str;
+                    break;
+                case 81:
+                    Sub_V0.Text = str;
+                    break;
+                case 82:
+                    Vpp1.Text = str;
+                    break;
+                case 83:
+                    Sub_V1.Text = str;
+                    break;
+                case 84:
+                    Vpp2.Text = str;
+                    break;
+                case 85:
+                    Sub_V2.Text = str;
                     break;
                 default:
                     break;
@@ -934,26 +960,72 @@ namespace Coin
             parentFrm.send_cmd_code("0018");//
         }
 
-        private void Vpp_KeyPress(object sender, KeyPressEventArgs e)
+        private void Vpp0_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("65", Vpp.Text);
+                    parentFrm.send_value("80", Vpp0.Text);
                 }
             }
         }
 
-        private void Sub_V_KeyPress(object sender, KeyPressEventArgs e)
+        private void Sub_V0_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
                 if (e.KeyChar == '\r')
                 {
-                    parentFrm.send_value("66", Sub_V.Text);
+                    parentFrm.send_value("81", Sub_V0.Text);
+                }
+            }
+        }
+        private void Vpp1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("82", Vpp1.Text);
+                }
+            }
+        }
+
+        private void Sub_V1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("83", Sub_V1.Text);
+                }
+            }
+        }
+
+        private void Vpp2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("84", Vpp2.Text);
+                }
+            }
+        }
+        private void Sub_V2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("85", Sub_V2.Text);
                 }
             }
         }
