@@ -806,8 +806,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 27);
             this.button3.TabIndex = 53;
-            this.button3.Text = "找零测试";
+            this.button3.Text = "找零测试All";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
@@ -819,6 +820,7 @@
             this.button2.TabIndex = 52;
             this.button2.Text = "找零测试";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -830,6 +832,7 @@
             this.button1.TabIndex = 51;
             this.button1.Text = "找零测试";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // hopper_status
             // 

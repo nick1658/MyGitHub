@@ -816,8 +816,7 @@ namespace Coin
             parentFrm.set_send_state(3);
             parentFrm.send_cmd_code("0008");//导出数据
         }
-
-        private void hopper_test_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             if (hopper_1yuan.Text == "")
             {
@@ -835,6 +834,37 @@ namespace Coin
             textBox_Tips.Text = "";
             parentFrm.send_hopper_value("80", hopper_1yuan.Text, hopper_5jiao.Text, hopper_1jiao.Text);
         }
+        private void hopper_test_Click(object sender, EventArgs e)
+        {
+            if (hopper_1yuan.Text == "")
+            {
+                hopper_1yuan.Text = "1";
+            }
+
+            textBox_Tips.Text = "";
+            parentFrm.send_hopper_value("80", hopper_1yuan.Text, "0", "0");
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (hopper_5jiao.Text == "")
+            {
+                hopper_5jiao.Text = "1";
+            }
+
+            textBox_Tips.Text = "";
+            parentFrm.send_hopper_value("80", "0", hopper_5jiao.Text, "0");
+        }
+        private void button2_Click_1(object sender, EventArgs e)
+        {   
+            if (hopper_1jiao.Text == "")
+            {
+                hopper_1jiao.Text = "1";
+            }
+
+            textBox_Tips.Text = "";
+            parentFrm.send_hopper_value("80", "0", "0", hopper_1jiao.Text);
+        }
+
 
         private void hopper_1yuan_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1029,8 +1059,5 @@ namespace Coin
                 }
             }
         }
-
-
-
     }
 }
