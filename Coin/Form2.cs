@@ -135,6 +135,15 @@ namespace Coin
             Sub_V1.Text = "0";
             Vpp2.Text = "0";
             Sub_V2.Text = "0";
+            base_std0.Text = "0";
+            base_std1.Text = "0";
+            base_std2.Text = "0";
+            coin_std0.Text = "0";
+            coin_std1.Text = "0";
+            coin_std2.Text = "0";
+            coin_offset0.Text = "0";
+            coin_offset1.Text = "0";
+            coin_offset2.Text = "0";
             hopper_1yuan.Text = "1";
             hopper_5jiao.Text = "1";
             hopper_1jiao.Text = "1";
@@ -342,6 +351,33 @@ namespace Coin
                 case 85:
                     Sub_V2.Text = str;
                     break;
+                case 86:
+                    base_std0.Text = str;
+                    break;
+                case 87:
+                    base_std1.Text = str;
+                    break;
+                case 88:
+                    base_std2.Text = str;
+                    break;
+                case 89:
+                    coin_std0.Text = str;
+                    break;
+                case 90:
+                    coin_std1.Text = str;
+                    break;
+                case 91:
+                    coin_std2.Text = str;
+                    break;
+                case 92:
+                    coin_offset0.Text = str;
+                    break;
+                case 93:
+                    coin_offset1.Text = str;
+                    break;
+                case 94:
+                    coin_offset2.Text = str;
+                    break;
                 default:
                     break;
             }
@@ -381,10 +417,6 @@ namespace Coin
                     {
                         return;
                     }
-                }
-                else if (c == ':')
-                {
-                    newstring = "";
                 }
                 else if (c == '\r')
                 {
@@ -1056,6 +1088,42 @@ namespace Coin
                 if (e.KeyChar == '\r')
                 {
                     parentFrm.send_value("85", Sub_V2.Text);
+                }
+            }
+        }
+
+        private void coin_offset0_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("92", coin_offset0.Text);
+                }
+            }
+        }
+
+        private void coin_offset1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("93", coin_offset1.Text);
+                }
+            }
+        }
+
+        private void coin_offset2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("94", coin_offset2.Text);
                 }
             }
         }
