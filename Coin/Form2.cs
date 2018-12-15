@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Coin
 {
-    public partial class CoinOP : Form
+    public partial class Coin_OP : Form
     {
 
         public Form1 parentFrm;
@@ -20,7 +20,7 @@ namespace Coin
         System.Timers.Timer _t;
 
         private int coin_mode = 0;
-        public CoinOP()
+        public Coin_OP()
         {
             InitializeComponent();
         }
@@ -377,6 +377,27 @@ namespace Coin
                     break;
                 case 94:
                     coin_offset2.Text = str;
+                    break;
+                case 95:
+                    hopper_1yuan.Text = str;
+                    break;
+                case 96:
+                    hopper_5jiao.Text = str;
+                    break;
+                case 97:
+                    hopper_1jiao.Text = str;
+                    break;
+                case 100:
+                    pan_run_time.Text = str;
+                    break;
+                case 101:
+                    pan_stop_time.Text = str;
+                    break;
+                case 102:
+                    belt_run_time.Text = str;
+                    break;
+                case 103:
+                    belt_stop_time.Text = str;
                     break;
                 default:
                     break;
@@ -1022,6 +1043,33 @@ namespace Coin
             parentFrm.send_cmd_code("0018");//
         }
 
+        private void pan_test_Click(object sender, EventArgs e)
+        {
+            if (pan_test.Text == "转盘电机启动")
+            {
+                pan_test.Text = "转盘电机停止";
+                parentFrm.send_cmd_code("0019");//
+            }
+            else
+            {
+                pan_test.Text = "转盘电机启动";
+                parentFrm.send_cmd_code("001A");//
+            }
+        }
+
+        private void belt_test_Click(object sender, EventArgs e)
+        {
+            if (belt_test.Text == "皮带电机启动")
+            {
+                belt_test.Text = "皮带电机停止";
+                parentFrm.send_cmd_code("001B");//
+            }
+            else
+            {
+                belt_test.Text = "皮带电机启动";
+                parentFrm.send_cmd_code("001C");//
+            }
+        }
         private void Vpp0_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
@@ -1127,5 +1175,53 @@ namespace Coin
                 }
             }
         }
+
+        private void pan_run_time_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("100", pan_run_time.Text);
+                }
+            }
+        }
+        private void pan_stop_time_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("101", pan_stop_time.Text);
+                }
+            }
+        }
+
+        private void belt_run_time_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("102", belt_run_time.Text);
+                }
+            }
+        }
+
+        private void belt_stop_time_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("103", belt_stop_time.Text);
+                }
+            }
+        }
+
     }
 }

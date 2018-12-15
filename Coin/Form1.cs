@@ -26,7 +26,7 @@ namespace Coin
         int respond_msg = 0xA0000;
         int send_lock = 0;
         int delay_ms = 0;
-        CoinOP coinOp = new CoinOP();
+        Coin_OP coinOp = new Coin_OP();
         string fileName = null;
         List<byte> buffer = new List<byte>(4096);
         List<byte> record_buffer = new List<byte>(516*1024);
