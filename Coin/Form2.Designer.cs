@@ -181,7 +181,11 @@
             this.label50 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.belt_cycle_time = new System.Windows.Forms.TextBox();
+            this.次数 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
+            this.pan_cycle_time = new System.Windows.Forms.TextBox();
             this.belt_stop_time = new System.Windows.Forms.TextBox();
             this.belt_test = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
@@ -1903,7 +1907,11 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.label60);
+            this.groupBox12.Controls.Add(this.belt_cycle_time);
+            this.groupBox12.Controls.Add(this.次数);
             this.groupBox12.Controls.Add(this.label59);
+            this.groupBox12.Controls.Add(this.pan_cycle_time);
             this.groupBox12.Controls.Add(this.belt_stop_time);
             this.groupBox12.Controls.Add(this.belt_test);
             this.groupBox12.Controls.Add(this.label56);
@@ -1921,6 +1929,36 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "电机循环测试";
             // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label60.Location = new System.Drawing.Point(157, 69);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(53, 12);
+            this.label60.TabIndex = 54;
+            this.label60.Text = "循环次数";
+            // 
+            // belt_cycle_time
+            // 
+            this.belt_cycle_time.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.belt_cycle_time.Location = new System.Drawing.Point(214, 65);
+            this.belt_cycle_time.Name = "belt_cycle_time";
+            this.belt_cycle_time.Size = new System.Drawing.Size(55, 21);
+            this.belt_cycle_time.TabIndex = 55;
+            this.belt_cycle_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.belt_cycle_time.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.belt_cycle_time_KeyPress);
+            // 
+            // 次数
+            // 
+            this.次数.AutoSize = true;
+            this.次数.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.次数.Location = new System.Drawing.Point(157, 18);
+            this.次数.Name = "次数";
+            this.次数.Size = new System.Drawing.Size(53, 12);
+            this.次数.TabIndex = 52;
+            this.次数.Text = "循环次数";
+            // 
             // label59
             // 
             this.label59.AutoSize = true;
@@ -1930,6 +1968,16 @@
             this.label59.Size = new System.Drawing.Size(77, 12);
             this.label59.TabIndex = 52;
             this.label59.Text = "停止时间(秒)";
+            // 
+            // pan_cycle_time
+            // 
+            this.pan_cycle_time.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.pan_cycle_time.Location = new System.Drawing.Point(214, 14);
+            this.pan_cycle_time.Name = "pan_cycle_time";
+            this.pan_cycle_time.Size = new System.Drawing.Size(55, 21);
+            this.pan_cycle_time.TabIndex = 53;
+            this.pan_cycle_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pan_cycle_time.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pan_cycle_time_KeyPress);
             // 
             // belt_stop_time
             // 
@@ -1945,7 +1993,7 @@
             // 
             this.belt_test.BackColor = System.Drawing.SystemColors.Control;
             this.belt_test.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.belt_test.Location = new System.Drawing.Point(164, 77);
+            this.belt_test.Location = new System.Drawing.Point(177, 87);
             this.belt_test.Name = "belt_test";
             this.belt_test.Size = new System.Drawing.Size(92, 27);
             this.belt_test.TabIndex = 51;
@@ -2007,7 +2055,7 @@
             // 
             this.pan_test.BackColor = System.Drawing.SystemColors.Control;
             this.pan_test.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pan_test.Location = new System.Drawing.Point(164, 31);
+            this.pan_test.Location = new System.Drawing.Point(177, 36);
             this.pan_test.Name = "pan_test";
             this.pan_test.Size = new System.Drawing.Size(92, 27);
             this.pan_test.TabIndex = 16;
@@ -2253,6 +2301,10 @@
         private System.Windows.Forms.TextBox pan_stop_time;
         private System.Windows.Forms.Button pan_test;
         private System.Windows.Forms.TextBox pan_run_time;
+        private System.Windows.Forms.Label 次数;
+        private System.Windows.Forms.TextBox pan_cycle_time;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox belt_cycle_time;
 
     }
 }

@@ -524,7 +524,11 @@ namespace Coin
         {
             int addr = int.Parse(addr_str) % 10000;
             string a_str = string.Format("{0:X4}", addr);
-            int value = int.Parse(value_str) % 10000;
+            int value = int.Parse(value_str);
+            if (value > 65535)
+            {
+                value = 65535;
+            }
             string v_str = string.Format("{0:X4}", value);
             while (send_lock == 1) ;
             Interlocked.Exchange(ref send_lock, 1);

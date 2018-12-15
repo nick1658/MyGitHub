@@ -399,6 +399,12 @@ namespace Coin
                 case 103:
                     belt_stop_time.Text = str;
                     break;
+                case 104:
+                    pan_cycle_time.Text = str;
+                    break;
+                case 105:
+                    belt_cycle_time.Text = str;
+                    break;
                 default:
                     break;
             }
@@ -1222,6 +1228,31 @@ namespace Coin
                 }
             }
         }
+
+        private void pan_cycle_time_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("104", pan_cycle_time.Text);
+                }
+            }
+        }
+
+        private void belt_cycle_time_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b' && !Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                if (e.KeyChar == '\r')
+                {
+                    parentFrm.send_value("105", belt_cycle_time.Text);
+                }
+            }
+        }
+
 
     }
 }
