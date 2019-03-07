@@ -195,7 +195,9 @@ namespace Coin
                 if (send_state == 0)
                 {
                     if (respond_str.Length > 0)
+                    {
                         respond_str = respond_str.Remove(respond_str.Length - 1);
+                    }
                     if (respond_str == "\b \b\b:")
                     {
                     }
@@ -210,6 +212,15 @@ namespace Coin
                         else
                         {
                             this.AddData(ReceiveBytes);//输出数据
+                        }
+                        if (respond_str == "The app was not valid!!!\r")
+                        {
+                            //respond_str = " ";
+                            download_process();
+                        }
+                        if (respond_str == "write iap_code_buf to nand flash block 10 page 0 nand addr 0 completed\r\n\r\nNick-Cmd")
+                        {
+                            send_str("reset\r");
                         }
                         buffer.RemoveRange(0, buffer.Count);
                     }
@@ -302,27 +313,30 @@ namespace Coin
                  return false;
              }
          }
+        void download_process ()
+        {
+            Thread thread_send = null;
+            //下载.Text = "停止";
+            if (radioNet.Checked == true)
+            {
+                thread_send = new Thread(this.DoNetSend);
+                thread_send.Start();
+            }
+            else if (radioSerial.Checked == true)
+            {
+                thread_send = new Thread(this.DoSerialSend);
+                thread_send.Start();
+            }
+            else
+            {
+                MessageBox.Show("请选择下载方式");
+            }    
+        }
         private void 下载_Click(object sender, EventArgs e)
         {
             if (下载.Text == "下载")
             {
-
-                Thread thread_send = null;
-                //下载.Text = "停止";
-                if (radioNet.Checked == true)
-                {
-                    thread_send = new Thread(this.DoNetSend);
-                    thread_send.Start();
-                }
-                else if (radioSerial.Checked == true)
-                {
-                    thread_send = new Thread(this.DoSerialSend);
-                    thread_send.Start();
-                }
-                else
-                {
-                    MessageBox.Show("请选择下载方式");
-                }
+                download_process();
             }
             else
             {
@@ -539,9 +553,22 @@ namespace Coin
         {
             int addr = int.Parse(addr_str) % 10000;
             string a_str = string.Format("{0:X4}", addr);
-            int value = int.Parse(value_str) % 256;
-            int value1 = int.Parse(value_str1) % 256;
-            int value2 = int.Parse(value_str2) % 256;
+            int value = int.Parse(value_str);
+            int value1 = int.Parse(value_str1);
+            int value2 = int.Parse(value_str2);
+
+            if (value > 255)
+            {
+                value = 255;
+            }
+            if (value1 > 255)
+            {
+                value1 = 255;
+            }
+            if (value2 > 255)
+            {
+                value2 = 255;
+            }
             string v_str = string.Format("{0:X2}", value);
             string v_str1 = string.Format("{0:X2}", value1);
             string v_str2 = string.Format("{0:X2}", value2);

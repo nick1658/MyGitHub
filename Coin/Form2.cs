@@ -44,6 +44,7 @@ namespace Coin
             else
             {
                 parentFrm.send_cmd_code("0003");//停止
+                //stop_poll();
                 //启动.Text = "启动";
             }
         }
